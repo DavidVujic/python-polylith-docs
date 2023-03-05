@@ -3,11 +3,18 @@ site_name: Python tools for the Polylith Architecture
 repo_url: https://github.com/DavidVujic/python-polylith
 repo_name: DavidVujic/python-polylith
 
+nav:
+    - Home: index.md
+    - Installation: installation.md
+    - Setup: setup.md
+    - Commands: commands.md
+
 theme:
   features:
     - search.highlight
     - search.share
     - navigation.footer
+    - content.code.copy
 
   name: material
 
