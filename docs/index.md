@@ -41,6 +41,7 @@ Where does the idea of bricks fit in here? Well, a brick is a namespaced Python 
 
 > Namespaces are one honking great idea -- let's do more of those! [^1]
 
+You will find a lot more information about the Polylith Architecture in general from the [official docs](https://polylith.gitbook.io/polylith/).
 
 ## Polylith for Python?
 The __Python tools for the Polylith Architecture__ is built as a __Poetry__ plugin. The plugin will add Polylith specific support to Poetry.
