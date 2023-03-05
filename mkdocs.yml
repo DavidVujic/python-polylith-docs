@@ -1,4 +1,39 @@
 site_name: Python tools for the Polylith Architecture
 
+repo_url: https://github.com/DavidVujic/python-polylith
+repo_name: DavidVujic/python-polylith
+
 theme:
+  features:
+    - search.highlight
+    - search.share
+    - navigation.footer
+
   name: material
+
+  icon:
+    repo: fontawesome/brands/github
+
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DavidVujic/python-polylith
+      name: Python tools for the Polylith Architecture on GitHub
