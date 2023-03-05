@@ -4,41 +4,54 @@
 This will create a Polylith workspace, with a basic Polylith folder structure.
 
 ``` shell
-poetry poly create workspace --name my_namespace --theme <tdd or loose>
+poetry poly create workspace --name my_example_namespace --theme loose
 ```
 
+### Options
+`--name` (required) the workspace name, will be used as a top namespace for all bricks.
+
+`--theme` the structure of the workspace (see below).
+
 ### Themes
-Themes are an exclusive Python Polylith feature, and defines what kind of component structure - or theme - to use.
+Themes are an exclusive Python Polylith feature, and defines what kind of workspace structure to use.
 
 #### loose (recommended)
-A theme to use for a more familiar structure for Python: `components/<namespace>/<package>` and will put a `test` folder at the root of the repository.
+A theme to use for a more familiar structure for Python: _components/namespace/package_ and will put a _test_ folder at the root of the repository.
 
 #### tdd
 The default and will set the structure according to the original Polylith Clojure implementation, such as:
-`components/<package>/src/<namespace>/<package>` with a corresponding `test` folder.
+_components/package/src/namespace/package_ with a corresponding _test_ folder.
 
 ## Create a component
 This command will create a component - i.e. a Python package in a namespaced folder.
 
 ``` shell
-poetry poly create component --name my_component
+poetry poly create component --name my_example_component
 ```
+
+### Options
+`--name` (required) the name of the component.
 
 ## Create a base
 This command will create a base - i.e. a Python package in a namespaced folder.
 
 ``` shell
-poetry poly create base --name my_example_aws_lambda
-```
-
-## Create a project
-This command will create a project - i.e. a pyproject.toml in a project folder. No Python code should be in this folder.
-
-``` shell
-poetry poly create project --name my_example_aws_lambada_project
+poetry poly create base --name my_example_base
 ```
 
 ### Options
+`--name` (required) the name of the base.
+
+## Create a project
+This command will create a project - i.e. a pyproject.toml in a project folder.
+
+``` shell
+poetry poly create project --name my_example_project
+```
+
+### Options
+`--name` (required) the name of the base.
+
 `--description`
 Add a brick description. The description will be added as a docstring.
 Also in the brick-specific README (when set to enabled in the `resources` section of the workspace config).
