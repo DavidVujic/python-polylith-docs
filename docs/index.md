@@ -29,3 +29,4 @@ built from the same Polylith Monorepo.
 
 There's a simple solution available in the tooling: a feature that organizes code according to
 a custom top namespace and will re-write imports in the actual source code.
+More details in [Packaging & deploying](deployment.md).
