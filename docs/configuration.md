@@ -20,3 +20,10 @@ brick_docs_enabled = false
 [tool.polylith.test]
 enabled = true
 ```
+
+
+### Components and bases documentation
+When `true`, a README is added when creating a component or a base.
+
+### Testing
+The create component and brick [commands](commands.md) will also create corresponding unit tests when enabled in the workspace configuration.

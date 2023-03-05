@@ -32,6 +32,9 @@ poetry poly create component --name my_example_component
 ### Options
 `--name` (required) the name of the component.
 
+`--description` adding a docstring to the base.
+It will also be added in the README, when enabled in the configuration. See [configuration](configuration.md).
+
 ## Create a base
 This command will create a base - i.e. a Python package in a namespaced folder.
 
@@ -42,6 +45,9 @@ poetry poly create base --name my_example_base
 ### Options
 `--name` (required) the name of the base.
 
+`--description` adding a docstring to the base.
+It will also be added in the README, when enabled in the configuration. See [configuration](configuration.md).
+
 ## Create a project
 This command will create a project - i.e. a pyproject.toml in a project folder.
 
@@ -50,11 +56,9 @@ poetry poly create project --name my_example_project
 ```
 
 ### Options
-`--name` (required) the name of the base.
+`--name` (required) the name of the project.
 
-`--description`
-Add a brick description. The description will be added as a docstring.
-Also in the brick-specific README (when set to enabled in the `resources` section of the workspace config).
+`--description` adding a _pyproject.toml_ description.
 
 
 ## Info
