@@ -29,4 +29,4 @@ By default, the code in one library will share the same top namespace with other
 built from the same Polylith Monorepo.
 
 There's a simple solution available in the tooling: a feature that organizes code according to
-a custom top namespace and re-writes imports made in the actual source code.
+a custom top namespace and will re-write imports in the actual source code.
