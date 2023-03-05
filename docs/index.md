@@ -1,4 +1,4 @@
-# Python tools for the Polylith Architecture
+# Home
 
 
 ## What's Polylith?
@@ -16,7 +16,6 @@ A component can be shared across apps, serverless functions and microservices.
 
 ## Polylith for Python?
 The tooling is built as a __Poetry__ plugin. The plugin will add Polylith specific support to Poetry.
-
 
 ### Use cases
 
