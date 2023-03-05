@@ -24,9 +24,4 @@ The main use case is to support having one or more microservices (or apps) in a 
 
 #### Libraries
 Polylith for Python has support for building libraries to be published at PyPI, even if it isn't the main use case.
-By default, the code in one library will share the same top namespace with other libraries that are
-built from the same Polylith Monorepo.
-
-There's a simple solution available in the tooling: a feature that organizes code according to
-a custom top namespace and will re-write imports in the actual source code.
-More details in [Packaging & deploying](deployment.md).
+More details about how to package libraries in [Packaging & deploying](deployment.md).
