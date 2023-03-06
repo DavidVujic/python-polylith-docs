@@ -64,6 +64,6 @@ projects/
 ```
 
 In the project-specific directory, you will find a project-specific `pyproject.toml` that defines dependencies, packages and everything needed for the actual project.
-It is not recommended to put Python code in here. Just add the necessary the project infrastructure, such as Dockerfiles and project-specific deploy scripting.
+It is not recommended to put Python code in here. Just add the necessary project infrastructure, such as Dockerfiles and project-specific deploy scripting.
 
 [^1]: From the official [Polylith Architecture documentation](https://polylith.gitbook.io/polylith/)
