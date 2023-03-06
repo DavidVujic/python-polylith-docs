@@ -2,9 +2,9 @@
 
 If you decide to give Polylith a try with existing code, the suggestion is to:
 
-- create a new repo and workspace (see [setup](setup.md) and [commands](commands.md)).
+- create a new repo and workspace. See [setup](setup.md) and [commands](commands.md).
 - choose one of your existing services or apps to migrate into the newly created Polylith repo.
-- create a base with the poly tool (see [commands](commands.md)) and put all of the existing Python code in there (to begin with).
+- create a base with the poly tool and put all of the existing Python code in there. Don't worry, we will fix this in next steps.
 - create a new project with the poly tool - this will be the project infrastructure for the service or app that currently lives in the _base_ you added in the prevous step.
 
 The entrypoint for your app would be something like:
