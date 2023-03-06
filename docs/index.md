@@ -19,9 +19,8 @@ In short, Polylith is about:
 - Keeping it simple
 
 ### What problems does it solve?
-Polylith offers a solution to the Microservice vs Monolith tradeoffs.
-
-Microservices are great, but the standard kind of setup will probably introduce a new set of problems:
+Polylith offers a solution to the Microservice vs Monolith tradeoffs. Microservices are great,
+but the standard kind of setup will probably introduce a new set of problems:
 
 - source code is spread out in several repositories.
 - duplicated code.
