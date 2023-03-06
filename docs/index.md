@@ -18,6 +18,25 @@ In short, Polylith is about:
 - Making it easy to reuse code across apps, tools, serverless functions and services
 - Keeping it simple
 
+### What problems does it solve?
+Polylith offers a solution to the Microservice vs Monolith tradeoffs.
+
+Microservices are great, but the standard kind of setup will probably introduce a new set of problems:
+
+- source code is spread out in several repositories.
+- duplicated code.
+- shared code need to be packaged as libraries - that means even more repositories.
+- microservices running different versions of tools and dependencies, potentially also different Python versions.
+
+That's a lot to maintain.
+
+A Monorepo addresses these types of issues, and Polylith comes with a simplistic solution to them.
+In addition to that, Polylith is focusing on the Developer Experience.
+It has support for REPL Driven Development - a workflow that makes coding both joyful and interactive.
+
+> If you can improve just one thing in your software development, make it getting faster feedback. [^2]
+
+
 ### Structure for simplicity
 Organizing, sorting and structuring things is difficult. Is there one folder structure to rule them all?
 
@@ -57,3 +76,4 @@ More details about how to package libraries in [Packaging & deploying](deploymen
 
 
 [^1]: From the Zen of Python
+[^2]: Dave Farley [on twitter](https://twitter.com/davefarley77/status/1560724029924786177?s=12&t=KxEN15qtnJODJUzkmclzmw)
