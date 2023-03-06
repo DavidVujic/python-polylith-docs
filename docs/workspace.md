@@ -55,7 +55,7 @@ development/
 ## projects
 > A project is the result of combining one base (or in rare cases several bases) with multiple components and libraries. [^1]
 
-Each project lives in a subdirectory of the `projects/` folder.
+Each project lives in a subdirectory of the `projects/` folder. A project is the deployable artifact: a microservice, a serverless function, a CLI or any kind of application.
 
 ``` shell
 projects/
