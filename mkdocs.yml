@@ -12,6 +12,7 @@ nav:
     - "The Polylith Workspace": workspace.md
     - "Projects & pyproject.toml": projects.md
     - "Packaging & deploying": deployment.md
+    - "Migrating to Polylith": migrating.md
     - Examples: examples.md
 
 theme:
