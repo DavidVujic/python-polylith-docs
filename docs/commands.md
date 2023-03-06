@@ -1,5 +1,7 @@
 # Commands
 
+<img width="640" alt="poly-info-example" src="https://user-images.githubusercontent.com/301286/203044825-b84371e8-caa8-4f85-8c94-4a5f3af887d6.png">
+
 ## Create a workspace
 This will create a Polylith workspace, with a basic Polylith folder structure.
 
