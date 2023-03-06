@@ -10,3 +10,5 @@ git init
 ``` shell
 poetry init
 ```
+
+Next step: create a Polylith Workspace (continue to [commands](commands.md)).
