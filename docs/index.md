@@ -22,15 +22,15 @@ In short, Polylith is about:
 Polylith offers a solution to the Microservice vs Monolith tradeoffs. Microservices are great,
 but the standard kind of setup will probably introduce a new set of problems:
 
-- source code is spread out in several repositories.
-- duplicated code.
-- shared code need to be packaged as libraries - that means even more repositories.
-- microservices running different versions of tools and dependencies, potentially also different Python versions.
+- Source code is spread out in several repositories.
+- Duplicated code.
+- Shared code need to be packaged as libraries - that means even more repositories.
+- Microservices running different versions of tools and dependencies, potentially also different Python versions.
 
-That's a lot to maintain.
+Phew, that's a lot to maintain.
 
-A Monorepo addresses these types of issues, and Polylith comes with a simplistic solution to them.
-In addition to that, Polylith is focusing on the Developer Experience.
+A Monorepo addresses these types of issues, and Polylith comes with simplistic solutions to them.
+In addition to that, Polylith is very much about the Developer Experience.
 It has support for REPL Driven Development - a workflow that makes coding both joyful and interactive.
 
 > If you can improve just one thing in your software development, make it getting faster feedback. [^2]
@@ -43,26 +43,26 @@ Organizing, sorting and structuring things is difficult. Is there one folder str
 
 A good folder structure is one that makes it simple to reuse existing code and makes it easy to add new code.
 You shouldn't have to worry about these things. The Polylith Architecture offers a way to organize code that is simple,
-framework agnostic and scalable as projects grow.
+framework agnostic and scalable as projects grow. See [The Polylith Workspace](workspace.md) for how such a structure looks like.
 
 
 ### It is all about the bricks
 The main takeaway is to view code as small, reusable bricks, that ideally does one thing only.
-A brick is not the same thing as a library. So, what's the difference? A library is a full blown feature. A brick can be a single function, or a parser. It can also be a thin wrapper around a third party tool.
+A brick is not the same thing as a library. So, what's the difference? Well, a library is a full blown feature. A brick can be a single function, or a parser. It can also be a thin wrapper around a third party tool.
 
 > Simple is better than complex. [^1]
 
 
 In Python, a file is a module. One or more modules in a folder becomes a package.
 A good thing with this is that the code will be namespaced when importing it.
-Where does the idea of bricks fit in here? Well, a brick is a namespaced Python package. Simple as that.
+Where does the idea of bricks fit in here? Well, a brick is a Python namespace package. Simple as that.
 
 > Namespaces are one honking great idea -- let's do more of those! [^1]
 
-You will find a lot more information about the Polylith Architecture in general from the [official docs](https://polylith.gitbook.io/polylith/).
+if you want to dig a bit deeper, you will find a lot more information about the Polylith Architecture in general from the [official docs](https://polylith.gitbook.io/polylith/).
 
 ## Polylith for Python?
-The __Python tools for the Polylith Architecture__ is built as a __Poetry__ plugin. The plugin will add Polylith specific support to Poetry.
+The __Python tools for the Polylith Architecture__ is built as a __Poetry__ plugin. The plugin will add Polylith specific features to Poetry.
 
 ### Use cases
 
