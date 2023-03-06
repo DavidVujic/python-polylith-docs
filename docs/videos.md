@@ -12,3 +12,7 @@
 
 ## Podcasts
 - TalkPython: [Monorepos in Python](https://talkpython.fm/episodes/show/399/monorepos-in-python)
+
+
+Got an article or video about this subject that you want to share here? You are very much welcome to make a Pull Request,
+or a Github issue to the [python-polylith-docs](https://github.com/DavidVujic/python-polylith-docs) repo.
