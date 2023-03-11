@@ -33,6 +33,9 @@ A Monorepo addresses these types of issues, and Polylith comes with simplistic s
 In addition to that, Polylith is very much about the Developer Experience.
 It has support for REPL Driven Development - a workflow that makes coding both joyful and interactive.
 
+This type of Architecture will also let you postpone these types of design decisions, like going for a Monolith or Microservices or Serverless.
+Your team can instead choose to focus on writing code and creating features. Make the decisions on how to deploy when you are ready for it.
+
 > If you can improve just one thing in your software development, make it getting faster feedback. [^2]
 
 
