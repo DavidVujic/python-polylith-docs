@@ -10,7 +10,7 @@ poetry poly create workspace --name my_example_namespace --theme loose
 ```
 
 ### Options
-`--name` (required) the workspace name, will be used as a top namespace for all bricks.
+`--name` (required) the workspace name, that will be used as the single top namespace for all bricks. __Choose the name wisely.__
 
 `--theme` the structure of the workspace (see below).
 

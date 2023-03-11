@@ -24,7 +24,7 @@ Ceate a workspace, with a basic Polylith folder structure.
 poetry poly create workspace --name my_namespace --theme loose
 ```
 
-`--name` (required) the workspace name, thay will be used as the single top namespace for all bricks.
+`--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
 __Choose the name wisely.__
 
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
