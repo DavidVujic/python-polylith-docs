@@ -25,7 +25,7 @@ poetry poly create workspace --name my_namespace --theme loose
 ```
 
 `--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
-__Choose the name wisely.__
+__Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
 
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
 
