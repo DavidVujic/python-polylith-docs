@@ -17,7 +17,7 @@ From the [Poetry docs](https://python-poetry.org/docs/cli/#init):
 
 Next step: create a Polylith Workspace. 
 
-## 2. Creating a new workspace
+## 2. Create a workspace
 Ceate a workspace, with a basic Polylith folder structure.
 
 ``` shell
