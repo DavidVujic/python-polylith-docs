@@ -1,14 +1,12 @@
-# Home
+# What's Polylith?
 
+Polylith is an architecture, with tooling support, originally built for Clojure. This project brings __Polylith to Python__.
 
-## What's Polylith?
-From the [official docs](https://polylith.gitbook.io/polylith/):
+From the [official Polylith Architecture docs](https://polylith.gitbook.io/polylith/):
 
 >... Polylith is a software architecture that applies functional thinking at the system scale. It helps us build simple, maintainable, testable, and scalable backend systems. ...
 
-Polylith is an architecture, with tooling support, originally built for Clojure. This project brings __Polylith to Python!__
-
-### An Architecture well suited for Monorepos
+## Well suited for Monorepos
 Polylith is using a components-first architecture. You can think of it as building blocks, very much like LEGO bricks.
 The Python code is separated from the infrastructure and the building of artifacts. This may sound complicated, but it isn't.
 
@@ -18,7 +16,7 @@ In short, Polylith is about:
 - Making it easy to reuse code across apps, tools, serverless functions and services
 - Keeping it simple
 
-### What problems does it solve?
+## What problems does Polylith solve?
 Polylith offers a solution to the Microservice vs Monolith tradeoffs. Microservices are great,
 but the standard kind of setup will probably introduce a new set of problems:
 
@@ -33,13 +31,13 @@ A Monorepo addresses these types of issues, and Polylith comes with simplistic s
 In addition to that, Polylith is very much about the Developer Experience.
 It has support for REPL Driven Development - a workflow that makes coding both joyful and interactive.
 
-This type of Architecture will also let you postpone these types of design decisions, like going for a Monolith or Microservices or Serverless.
+This type of Architecture will also let you postpone design decisions, like going for a Monolith or REST Microservices or Serverless functions.
 Your team can instead choose to focus on writing code and creating features. Make the decisions on how to deploy when you are ready for it.
 
 > If you can improve just one thing in your software development, make it getting faster feedback. [^2]
 
 
-### Structure for simplicity
+## Structure for simplicity
 Organizing, sorting and structuring things is difficult. Is there one folder structure to rule them all?
 
 > There should be one-- and preferably only one --obvious way to do it. [^1]
