@@ -124,3 +124,20 @@ and expects a `poetry.lock` of a project to be present.
 ### Options
 `--directory`
 Show info about libraries used in a specific project.
+
+
+## Sync
+Keep projects in sync with the actual usage of bricks in source code.
+
+``` shell
+poetry poly sync
+```
+
+This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.
+
+- projects: will add missing bricks to the project specific _pyproject.toml_, when imported by any of the already added bricks.
+- development: will add __all__ missing bricks to the development _pyproject.toml_.
+
+### Options
+`--directory`
+Synchronize a specific project.
