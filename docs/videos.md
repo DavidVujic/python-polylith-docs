@@ -10,6 +10,7 @@
 - [The last Python Architecture you will ever need?](https://davidvujic.blogspot.com/2022/11/the-last-python-architecture-you-will-ever-need.html)
 - [A Fresh Take on Monorepos in Python](https://davidvujic.blogspot.com/2022/02/a-fresh-take-on-monorepos-in-python.html)
 - [A simple & scalable Python project structure](https://davidvujic.blogspot.com/2022/08/a-simple-scalable-python-project.html)
+- [Aws CDK App with polylith code architecture](https://dev.to/ybenitezf/aws-cdk-app-with-polylith-code-architecture-30e3) by Yoel Benítez Fonseca
 
 ## Podcasts
 - TalkPython: [Monorepos in Python](https://talkpython.fm/episodes/show/399/monorepos-in-python)
