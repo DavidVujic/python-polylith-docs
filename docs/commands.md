@@ -25,6 +25,10 @@ A theme to use for a more familiar structure for Python: _components/namespace/p
 The default and will set the structure according to the original Polylith Clojure implementation, such as:
 _components/package/src/namespace/package_ with a corresponding _test_ folder.
 
+#### What's the deal with the .keep files?
+When creating a new workspace, the Polylith tool will add `.keep` files in the newly created folders.
+These are added for any initial commits of the folder structure, and can safely be removed when adding source files.
+
 ## Create a component
 This command will create a component - i.e. a Python package in a namespaced folder.
 
