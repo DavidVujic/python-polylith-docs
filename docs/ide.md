@@ -2,6 +2,10 @@
 
 ## MyPy
 
+Add this configuration if you use MyPy for static analysis. With this configuration,
+namespace packages will be enabled and top-level packages will be based in the `mypy_path` option.
+
+
 ```toml
 [mypy]
 mypy_path = components, bases
@@ -10,6 +14,8 @@ explicit_package_bases = True
 ```
 
 ## Pyright
+
+Pyright users can add this setting to make the tool aware of the `components` and `bases` folders.
 
 `.vscode/settings.json`
 
