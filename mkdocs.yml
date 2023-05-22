@@ -15,6 +15,7 @@ nav:
     - "Migrating to Polylith": migrating.md
     - Examples: examples.md
     - "Videos & tutorials": videos.md
+    - "Configuring your Python IDE": ide.md
 
 theme:
   features:
