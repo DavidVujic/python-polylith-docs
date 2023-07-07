@@ -29,6 +29,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+  logo: img/polylith-logo.png
   favicon: img/polylith-48by48.ico
 
   palette:
