@@ -21,18 +21,22 @@ Polylith addresses these types of issues, with simplistic solutions.
 In addition to that, Polylith is very much about the Developer Experience.
 It has support for REPL Driven Development - a workflow that makes coding both joyful and interactive.
 
+> If you can improve just one thing in your software development, make it getting faster feedback. [^1]
+
 This type of Architecture will also let you postpone design decisions, like going for a Monolith or REST Microservices or Serverless functions.
 Your team can instead choose to focus on writing code and creating features. Make the decisions on how to deploy when you are ready for it.
 
-> If you can improve just one thing in your software development, make it getting faster feedback. [^1]
-
 ## Well suited for Monorepos
 Polylith is using a components-first architecture. You can think of it as building blocks, very much like LEGO bricks.
-All code lives in a Monorepo, available for reuse. The Python code - the bricks - is separated from the infrastructure and the building of artifacts. This may sound complicated, but it isn't.
+All code lives in a Monorepo, available for reuse. Python code - _the bricks_ - is separated from the infrastructure and the actual building of artifacts.
+
+This may sound complicated, but it isn't.
+
+![polylith bricks](img/polylith-bricks.png)
 
 In short, Polylith is about:
 
-- Viewing code as bricks, that can be combined into features
+- Viewing code as bricks that can be combined into features
 - Making it easy to reuse code across apps, tools, serverless functions and services
 - Keeping it simple
 
@@ -55,8 +59,11 @@ Organizing, sorting and structuring things is difficult. Is there one folder str
 
 A good folder structure is one that makes it simple to reuse existing code and makes it easy to add new code.
 You shouldn't have to worry about these things. The Polylith Architecture offers a way to organize code that is simple,
-framework agnostic and scalable as projects grow. See [The Polylith Workspace](workspace.md) for how such a structure looks like.
+framework agnostic and scalable as projects grow.
 
+See [The Polylith Workspace](workspace.md) for how such a structure looks like.
+
+![polylith developer experience](img/polylith-developer-experience.png)
 
 ### It is all about the bricks
 The main takeaway is to view code as small, reusable bricks, that ideally does one thing only.
