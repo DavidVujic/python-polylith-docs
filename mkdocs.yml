@@ -29,6 +29,8 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
+  favicon: img/polylith-48by48.ico
+
   palette:
     # Palette toggle for dark mode
     - scheme: slate
