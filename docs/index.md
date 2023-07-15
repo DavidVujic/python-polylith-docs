@@ -1,5 +1,7 @@
 # What's Polylith?
 
+> :material-information: For a more visual quickstart, check out the short videos in the [Videos & tutorials](videos.md) section.
+
 Polylith is an architecture, with tooling support, originally built for Clojure. This project brings __Polylith to Python__.
 
 From the [official Polylith Architecture docs](https://polylith.gitbook.io/polylith/):
