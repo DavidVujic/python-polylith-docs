@@ -45,3 +45,15 @@ By default, `Poetry` will create a `venv` outside of the repo. You can override 
 path = ".venv"
 in-project = true
 ```
+
+## PyCharm
+Make sure that you have a local virtual environment configuration (see above).
+
+Run `poetry install` in a shell.
+
+This will install the dependencies, and make the environment aware of the `bases` and `components` folders.
+PyCharm will ask about what interpreter to use when opening a Python file. Make sure to choose the local one in the `.venv` folder.
+
+Everything should now be set up correctly for PyCharm!
+
+![PyCharm Virtual Environment setup](img/pycharm-venv-setup.gif)
