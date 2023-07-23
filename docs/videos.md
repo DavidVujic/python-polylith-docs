@@ -14,6 +14,7 @@
 - [A simple & scalable Python project structure](https://davidvujic.blogspot.com/2022/08/a-simple-scalable-python-project.html)
 - [Aws CDK App with polylith code architecture](https://dev.to/ybenitezf/aws-cdk-app-with-polylith-code-architecture-30e3) by Yoel Benítez Fonseca
 - [GCP Cloud Functions with Python and Polylith](https://davidvujic.blogspot.com/2023/07/gcp-cloud-functions-with-python-and-polylith.html)
+- [Python FastAPI Microservices with Polylith](https://davidvujic.blogspot.com/2023/07/python-fastapi-microservices-with-polylith.html)
 
 ## Podcasts
 - __Talk Python To Me__: [Monorepos in Python](https://talkpython.fm/episodes/show/399/monorepos-in-python)
