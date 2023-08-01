@@ -75,6 +75,9 @@ Show info about the workspace:
 poetry poly info
 ```
 
+### Options
+`--short` Display a view that is better adjusted to Workspaces with many projects.
+
 ## Diff
 Shows what has changed since the most recent stable point in time:
 
