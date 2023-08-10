@@ -65,7 +65,7 @@ framework agnostic and scalable as projects grow.
 
 See [The Polylith Workspace](workspace.md) for how such a structure looks like.
 
-![polylith developer experience](img/polylith-and-developer-experience.png)
+![polylith developer experience](img/polylith-and-the-developer-experience.png)
 
 ### It is all about the bricks
 The main takeaway is to view code as small, reusable bricks, that ideally does one thing only.
