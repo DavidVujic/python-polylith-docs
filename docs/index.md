@@ -34,7 +34,7 @@ All code lives in a Monorepo, available for reuse. Python code - _the bricks_ - 
 
 This may sound complicated, but it isn't.
 
-![polylith bricks](img/polylith-bricks.png)
+![polylith bricks](img/polylith-and-bricks.png)
 
 In short, Polylith is about:
 
@@ -65,7 +65,7 @@ framework agnostic and scalable as projects grow.
 
 See [The Polylith Workspace](workspace.md) for how such a structure looks like.
 
-![polylith developer experience](img/polylith-developer-experience.png)
+![polylith developer experience](img/polylith-and-developer-experience.png)
 
 ### It is all about the bricks
 The main takeaway is to view code as small, reusable bricks, that ideally does one thing only.
