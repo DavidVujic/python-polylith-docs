@@ -116,6 +116,18 @@ poetry lock --directory path/to-project
 `--directory`
 Show info about libraries used in a specific project.
 
+`--strict`
+A more narrow way of comparing third-party libraries and the actual imports.
+This is useful to rule out possible false positives.
+
+`--alias`
+Useful when an import differ from the library name.
+
+Example: the library "opencv-python" and the actual import "cv2".
+The poly libs command will likely report the "cv2" as a missing dependency.
+
+Using `--alias opencv-python=cv2` will make the command treat the alias as a third-party import.
+
 
 ## Check
 Validates the Polylith workspace, checking for any missing dependencies (bricks and third-party libraries):
@@ -131,6 +143,18 @@ and expects a `poetry.lock` of a project to be present.
 ### Options
 `--directory`
 Show info about libraries used in a specific project.
+
+`--strict`
+A more narrow way of comparing third-party libraries and the actual imports.
+This is useful to rule out possible false positives.
+
+`--alias`
+Useful when an import differ from the library name.
+
+Example: the library "opencv-python" and the actual import "cv2".
+The poly check command will likely report the "cv2" as a missing dependency.
+
+Using `--alias opencv-python=cv2` will make the command treat the alias as a third-party import.
 
 
 ## Sync
