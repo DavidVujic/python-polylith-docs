@@ -104,10 +104,10 @@ changes="$(poetry poly diff --bricks --short)"
 query=${changes//,/ or }
 
 # run the test, filtered by keyword expression
-poetry run pytest -k <<< echo $query
+poetry run pytest -k <<< echo "$query"
 
 # or run the test, filtered by pytest markers
-poetry run pytest -m <<< echo $query
+poetry run pytest -m <<< echo "$query"
 ```
 
 ### Options
