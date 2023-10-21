@@ -97,7 +97,7 @@ It is also useful when running tests for changed bricks only.
 Example, how to run __pytest__ for changed bricks only:
 ``` shell
 # store the comma-separated list of bricks in a bash variable
-changes=$(poetry poly diff --bricks --short)
+changes="$(poetry poly diff --bricks --short)"
 
 # transform it into a pytest query,
 # i.e. from "hello,world,something" to "hello or world or something"
