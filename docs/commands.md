@@ -103,7 +103,7 @@ changes=$(poetry poly diff --bricks --short)
 # i.e. from "hello,world,something" to "hello or world or something"
 query=${changes//,/ or }
 
-# run the test, filtered by keyword expression.
+# run the test, filtered by keyword expression
 poetry run pytest -k <<< echo $query
 
 # or run the test, filtered by pytest markers
@@ -113,7 +113,7 @@ poetry run pytest -m <<< echo $query
 ### Options
 `--short` Useful for determining what projects has been affected by the changes in CI.
 
-`--bricks` Useful for determining changed bricks. It will display a comma-separated list of bricks when using it with the `--short` option.
+`--bricks` Useful for displaying changed bricks only. It will print a comma-separated list of bricks when using it with the `--short` option.
 
 
 
