@@ -96,10 +96,11 @@ It is also useful when running tests for changed bricks only.
 ### Testing
 Example, how to run __pytest__ for changed bricks only:
 ``` shell
-# store the diff in a bash variable
+# store the comma-separated list of bricks in a bash variable
 changes=$(poetry poly diff --bricks --short)
 
-# create a pytest query, i.e. "hello or world or something"
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
 query=${changes//,/ or }
 
 # run the test, filtered by keyword expression.
