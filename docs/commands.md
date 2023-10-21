@@ -90,13 +90,30 @@ The tool will look for the latest tag according to a certain pattern, such as `s
 The pattern can be configured in `workspace.toml`.
 
 The `diff` command is useful in a CI environment, to determine if a project should be deployed or not.
-The command has a `--short` flag to only print a comma separated list of changed projects to the standard output.
+It is also useful when running tests for changed bricks only.
 
 
-Useful for CI:
+### Testing
+Example, how to run __pytest__ for changed bricks only:
 ``` shell
-poetry poly diff --short
+# store the diff in a bash variable
+changes=$(poetry poly diff --bricks --short)
+
+# create a pytest query, i.e. "hello or world or something"
+query=${changes//,/ or }
+
+# run the test, filtered by keyword expression.
+poetry run pytest -k <<< echo $query
+
+# or run the test, filtered by pytest markers
+poetry run pytest -m <<< echo $query
 ```
+
+### Options
+`--short` Useful for determining what projects has been affected by the changes in CI.
+
+`--bricks` Useful for determining changed bricks, and can be combined with the `--short` option.
+
 
 
 ## Libs
