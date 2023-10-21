@@ -113,7 +113,7 @@ poetry run pytest -m <<< echo $query
 ### Options
 `--short` Useful for determining what projects has been affected by the changes in CI.
 
-`--bricks` Useful for determining changed bricks, and can be combined with the `--short` option.
+`--bricks` Useful for determining changed bricks. It will display a comma-separated list of bricks when using it with the `--short` option.
 
 
 
