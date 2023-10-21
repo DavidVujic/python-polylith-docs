@@ -101,7 +101,7 @@ changes="$(poetry poly diff --bricks --short)"
 
 # transform it into a pytest query,
 # i.e. from "hello,world,something" to "hello or world or something"
-query=${changes//,/ or }
+query="${changes//,/ or }"
 
 # run the test, filtered by keyword expression
 poetry run pytest -k <<< echo "$query"
