@@ -115,7 +115,12 @@ poetry run pytest -m <<< echo "$query"
 
 `--bricks` Useful for displaying changed bricks only. It will print a comma-separated list of bricks when using it with the `--short` option.
 
+`--since` Useful for displaying changes since a `stable` or `release` tag.
 
+Example:
+``` shell
+poetry poly diff --since release
+```
 
 ## Libs
 Show info about the third-party libraries used in the workspace:
