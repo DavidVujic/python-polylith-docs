@@ -64,3 +64,17 @@ query="${changes//,/ or }"
 
 poetry run pytest -k <<< echo "$query"
 ```
+
+## Manually testing and running services
+The `bases` and `components` is plain Python,
+and the code can be run as you would if it were a single project repository.
+The bases are the __entry points__ to your services and apps.
+
+### Example: running a FastAPI service locally
+Start the service by specifying the namespace path to your entry point (i.e. the `base`).
+``` bash
+uvicorn my_top_namespace.my_fastapi_service.core:app
+```
+
+It is also possible to test out project-specific
+entries that are defined in a `pyproject.toml` as you would in a mainstream Poetry project.
