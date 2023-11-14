@@ -10,6 +10,7 @@ nav:
     - Commands: commands.md
     - Configuration: configuration.md
     - "The Polylith Workspace": workspace.md
+    - Dependencies: dependencies.md
     - "Projects & pyproject.toml": projects.md
     - Testing: testing.md
     - "Packaging & deploying": deployment.md
