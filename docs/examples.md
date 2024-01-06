@@ -1,6 +1,6 @@
-# Examples
+# Examples & Production Systems
 
-## Example code
+## Example code repositories
 Here are some examples of how to setup __Python__ with the Polylith Architecture.
 
 - [Python Polylith Example](https://github.com/DavidVujic/python-polylith-example) repository by David Vujic
@@ -10,8 +10,18 @@ Here are some examples of how to setup __Python__ with the Polylith Architecture
 You will find examples of sharing code between different kind of projects, developer tooling configuration such as `mypy` and the `venv`,
 and development setup for REPL Driven Development or Jupyter notebooks.
 
-In addition to the examples, there is also the actual [Python tools for the Polylith Architecture](https://github.com/DavidVujic/python-polylith) repo, that itself is a Polylith Workspace.
+## Production Systems
+[Runestone Academy Monorepo](https://github.com/RunestoneInteractive/rs)
 
-### Looking for examples and production systems
+> Runestone Academy is an open-source project and our mission is to equip the nation's STEM teachers with open-source content, tools and strategies they need to create engaging, accessible, and effective learning experiences for their students. 
+
+![poly info](img/runestone-poly-info.png)
+
+## Other
+In addition to the examples and Production Systems,
+there is also the actual [Python tools for the Polylith Architecture](https://github.com/DavidVujic/python-polylith)
+repo, that itself is a Polylith Workspace.
+
+### Your project here?
 Do you have a Polylith repository that you or your company would like to share here? You are very much welcome to make a Pull Request,
-or a Github issue to the [python-polylith-docs](https://github.com/DavidVujic/python-polylith-docs) repo.
+or create a Github issue to the [python-polylith-docs](https://github.com/DavidVujic/python-polylith-docs) repo.

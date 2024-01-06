@@ -15,7 +15,7 @@ nav:
     - Testing: testing.md
     - "Packaging & deploying": deployment.md
     - "Migrating to Polylith": migrating.md
-    - Examples: examples.md
+    - "Examples & Production Systems": examples.md
     - "Videos & tutorials": videos.md
     - "Configuring your Python IDE": ide.md
 
