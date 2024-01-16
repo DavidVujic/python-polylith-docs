@@ -43,7 +43,10 @@ In short, Polylith is about:
 - Keeping it simple
 
 ## Polylith for Python?
-The __Python tools for the Polylith Architecture__ is built as a __Poetry__ plugin. The plugin will add Polylith specific features to Poetry.
+The __Python tools for the Polylith Architecture__ is available as two options:
+
+- A __Poetry__ plugin. The plugin will add Polylith specific features to Poetry.
+- ⭐ New! ⭐ A standalone CLI, currently supporting __Hatch__ (and Poetry).
 
 ### Use cases
 
@@ -67,7 +70,7 @@ See [The Polylith Workspace](workspace.md) for how such a structure looks like.
 
 ![polylith developer experience](img/polylith-and-the-developer-experience.png)
 
-### It is all about the bricks
+### Simple is better
 The main takeaway is to view code as small, reusable bricks, that ideally does one thing only.
 A brick is not the same thing as a library. So, what's the difference? Well, a library is a full blown feature. A brick can be a single function, or a parser. It can also be a thin wrapper around a third party tool.
 

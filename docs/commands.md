@@ -5,8 +5,14 @@
 ## Create a workspace
 This will create a Polylith workspace, with a basic Polylith folder structure.
 
+### Poetry
 ``` shell
 poetry poly create workspace --name my_example_namespace --theme loose
+```
+
+### Hatch
+``` shell
+hatch run poly create workspace --name my_example_namespace --theme loose
 ```
 
 ### Options
@@ -32,8 +38,14 @@ These are added for any initial commits of the folder structure, and can safely 
 ## Create a component
 This command will create a component - i.e. a Python package in a namespaced folder.
 
+### Poetry
 ``` shell
 poetry poly create component --name my_example_component
+```
+
+### Hatch
+``` shell
+hatch run poly create component --name my_example_component
 ```
 
 ### Options
@@ -45,8 +57,14 @@ It will also be added in the README, when enabled in the configuration. See [con
 ## Create a base
 This command will create a base - i.e. a Python package in a namespaced folder.
 
+### Poetry
 ``` shell
 poetry poly create base --name my_example_base
+```
+
+### Hatch
+``` shell
+hatch run poly create base --name my_example_base
 ```
 
 ### Options
@@ -58,8 +76,14 @@ It will also be added in the README, when enabled in the configuration. See [con
 ## Create a project
 This command will create a project - i.e. a pyproject.toml in a project folder.
 
+### Poetry
 ``` shell
 poetry poly create project --name my_example_project
+```
+
+### Hatch
+``` shell
+hatch run poly create project --name my_example_project
 ```
 
 ### Options
@@ -71,8 +95,14 @@ poetry poly create project --name my_example_project
 ## Info
 Show info about the workspace:
 
+### Poetry
 ``` shell
 poetry poly info
+```
+
+### Hatch
+``` shell
+hatch run poly info
 ```
 
 ### Options
@@ -81,8 +111,14 @@ poetry poly info
 ## Diff
 Shows what has changed since the most recent stable point in time:
 
+### Poetry
 ``` shell
 poetry poly diff
+```
+
+### Hatch
+``` shell
+hatch run poly diff
 ```
 
 The `diff` command will compare the current state of the repository, compared to a `git tag`.
@@ -94,7 +130,9 @@ It is also useful when running tests for changed bricks only.
 
 
 ### Testing
-Example, how to run __pytest__ for changed bricks only:
+Example, how to run __pytest__ for changed bricks only.
+
+### Poetry
 ``` shell
 # store the comma-separated list of bricks in a bash variable
 changes="$(poetry poly diff --bricks --short)"
@@ -102,12 +140,41 @@ changes="$(poetry poly diff --bricks --short)"
 # transform it into a pytest query,
 # i.e. from "hello,world,something" to "hello or world or something"
 query="${changes//,/ or }"
+```
 
-# run the test, filtered by keyword expression
+Run the test, filtered by keyword expression
+
+``` shell
 poetry run pytest -k <<< echo "$query"
+```
 
-# or run the test, filtered by pytest markers
+or run the test, filtered by pytest markers
+
+``` shell
 poetry run pytest -m <<< echo "$query"
+```
+
+### Hatch
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(hatch run poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+hatch run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+hatch run pytest -m <<< echo "$query"
+
 ```
 
 ### Options
@@ -118,13 +185,20 @@ poetry run pytest -m <<< echo "$query"
 `--since` Useful for displaying changes since a `stable` or `release` tag.
 
 Example:
+#### Poetry
 ``` shell
 poetry poly diff --since release
+```
+
+#### Hatch
+``` shell
+hatch run poly diff --since release
 ```
 
 ## Libs
 Show info about the third-party libraries used in the workspace:
 
+### Poetry
 ``` shell
 poetry poly libs
 ```
@@ -134,6 +208,12 @@ If missing, there is a Poetry command available:
 ``` shell
 poetry lock --directory path/to-project
 ```
+
+### Hatch
+``` shell
+hatch run poly libs
+```
+
 
 ### Options
 `--directory`
@@ -155,13 +235,18 @@ Using `--alias opencv-python=cv2` will make the command treat the alias as a thi
 ## Check
 Validates the Polylith workspace, checking for any missing dependencies (bricks and third-party libraries):
 
+### Poetry
 ``` shell
 poetry poly check
 ```
 
-This feature is built on top of the `poetry poly libs` command,
-and expects a `poetry.lock` of a project to be present.
+This feature is built on top of the `poly libs` command,
+and for expects a `poetry.lock` of a `Poetry` project to be present.
 
+### Hatch
+``` shell
+hatch run poly check
+```
 
 ### Options
 `--directory`
@@ -183,8 +268,14 @@ Using `--alias opencv-python=cv2` will make the command treat the alias as a thi
 ## Sync
 Keep projects in sync with the actual usage of bricks in source code.
 
+### Poetry
 ``` shell
 poetry poly sync
+```
+
+### Hatch
+``` shell
+hatch run poly sync
 ```
 
 This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.

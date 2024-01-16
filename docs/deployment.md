@@ -1,9 +1,13 @@
 # Packaging & deploying
 
+## Poetry
 Packaging and deploying Polylith projects is done by using the Poetry Multiproject plugin command (see [installation](installation.md)).
 
 The `poetry build-project` command will make it possible to use relative package includes as how components and bases are added to Python Polylith projects. 
 Relative includes are currently not possible by default in __Poetry__, that is where the __Multiproject__ plugin comes in.
+
+## Hatch
+Hatch supports relative includes via the `force-include` configuration. Nothing extra needed!
 
 ## Packaging
 To collect the components and bases that are needed for a specific project, the tool introduces a _build_ step. 
@@ -13,12 +17,21 @@ This is the preferred way for Polylith projects.
 
 ### Packaging a service or app
 
+#### Poetry
 ``` shell
 poetry build-project --directory path/to/project
 ```
 
+#### Hatch
+``` shell
+cd path/to_project
+
+hatch build
+```
+
+
 This command will create a project specific _dist_ folder containing a _wheel_ and an _sdist_.
-You can use the default __poetry build__ options with this command too.
+You can use the available __build__ options with this command too.
 
 ## Deploying
 You can use the built artifacts to install your service in your preffered way, just by running
@@ -28,6 +41,11 @@ pip install the-built-artifact.whl
 ```
 
 ### Packaging a Library
+
+__NOTE:__ only supported for Poetry.
+
+_Hatch support for packaging libraries is currently being developed._
+
 The plugin has support for building libraries to be published at PyPI, even if it isn't the main use case.
 But why? By default, the code in one library will share the same top namespace with other libraries that are
 built from the same Polylith Monorepo. 

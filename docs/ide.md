@@ -38,7 +38,11 @@ extraPaths = ["bases", "components"]
 
 ## .venv
 It is recommended to create the virtual environment locally, for a great code editor experience.
-By default, `Poetry` will create a `venv` outside of the repo. You can override that behaviour by adding a configuration in a `poetry.toml` file:
+By default, both `Poetry` and `Hatch` will create a `venv` outside of the repo.
+You can override that behaviour by adding a configuration.
+
+### Poetry
+Add this in a `poetry.toml` file:
 
 ``` toml
 [virtualenvs]
@@ -46,10 +50,18 @@ path = ".venv"
 in-project = true
 ```
 
+### Hatch
+``` toml
+[tool.hatch.envs.default]
+type = "virtual"
+path = ".venv"
+```
+
+
 ## PyCharm
 Make sure that you have a local virtual environment configuration (see above).
 
-Run `poetry install` in a shell.
+Run `poetry install` or `hatch env create` in a shell.
 
 This will install the dependencies, and make the environment aware of the `bases` and `components` folders.
 PyCharm will ask about what interpreter to use when opening a Python file. Make sure to choose the local one in the `.venv` folder.

@@ -9,6 +9,7 @@ If you decide to give Polylith a try with existing code, the suggestion is to:
 
 The entrypoint for your app would be something like:
 
+## Poetry
 ``` toml
 [tool.poetry]
 packages = [
@@ -18,6 +19,16 @@ packages = [
 [tool.poetry.dependencies]
 # insert the needed 3rd party libraries here
 ```
+
+## Hatch
+``` toml
+[project]
+dependencies = [] # insert the needed 3rd party libraries here
+
+[tool.hatch.build.force-include]
+"../../bases/your_namespace/your_app" = "your_namespace/your_app"
+```
+
 
 You should now be able to run the service or app locally.
 
@@ -35,8 +46,16 @@ Continue with your next existing service or app! By now, you should already be a
 ## Migrating away from Polylith?
 This step is simple.
 
+### Poetry
 ``` shell
 poetry build-project --directory path/to/project
+```
+
+### Hatch
+``` shell
+cd path/to/project
+
+hatch build
 ```
 
 The output is a `wheel` and, more importantly, an `sdist` (a source distribution). It is essentially a _zip_ file containing all source code used in the project.
