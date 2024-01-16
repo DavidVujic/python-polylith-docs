@@ -3,7 +3,8 @@
 ## Example code repositories
 Here are some examples of how to setup __Python__ with the Polylith Architecture.
 
-- [Python Polylith Example](https://github.com/DavidVujic/python-polylith-example) repository by David Vujic
+- [Poetry Python Polylith Example](https://github.com/DavidVujic/python-polylith-example) repository by David Vujic
+- [Hatch Python Polylith Example](https://github.com/DavidVujic/python-polylith-example-hatch) repository by David Vujic
 - [Python Polylith Microservices Example](https://github.com/ttamg/python-polylith-microservices-example) by Matt Gosden
 - [Aws CDK App with Polylith](https://github.com/ybenitezf/cdk_polylith) by Yoel Benítez Fonseca
 
