@@ -9,8 +9,15 @@ The tests are added in a `test` folder at the root of the workspace with the sam
 
 ### Example
 Creating a new `parser` component. This will add a new brick to the `components` folder.
+
+#### Poetry
 ``` shell
 poetry poly create component --name parser
+```
+
+#### Hatch
+``` shell
+hatch run poly create component --name parser
 ```
 
 A corresponding unit test will also be created in the `test` folder:
@@ -26,8 +33,15 @@ Add the proper assertions to your tests during development of the bricks.
 
 ## Running tests
 Running Pytest from the workspace root:
+
+### Poetry
 ``` shell
 poetry run pytest
+```
+
+### Hatch
+``` shell
+hatch run pytest
 ```
 
 ### Running tests for changed code
@@ -37,15 +51,28 @@ You can use `poly diff` and your favorite test runner to only run the correspond
 The `diff` command has support for displaying the changed bricks by using `--bricks`.
 Append the `--short` option for a scripting-friendly output.
 
+#### Poetry
 ``` shell
 poetry poly diff --bricks --short
+```
+
+#### Hatch
+``` shell
+hatch run poly diff --bricks --short
 ```
 
 You can use the output from the `poly diff` command to run specific tests.
 
 Storing a list of bricks in a bash variable:
+
+#### Poetry
 ``` shell
 changes="$(poetry poly diff --bricks --short)"
+```
+
+#### Hatch
+``` shell
+changes="$(hatch run poly diff --bricks --short)"
 ```
 
 By having tests in the same kind of structure as the bricks,
@@ -59,10 +86,18 @@ Transform the result of the `poly diff` command into a Pytest _keyword_ or _mark
 - `-q` is for running tests by keyword expressions.
 - `-m` is for running tests by marker expressions.
 
+#### Poetry
 ``` shell
 query="${changes//,/ or }"
 
 poetry run pytest -k <<< echo "$query"
+```
+
+#### Hatch
+``` shell
+query="${changes//,/ or }"
+
+hatch run pytest -k <<< echo "$query"
 ```
 
 ## Manually testing and running services
