@@ -80,14 +80,15 @@ top-namespace = "my_custom_namespace"
 By using the Poetry build-project flag or the Hatch Build Hook, the built artifact will look something like this:
 ```shell
 my_custom_namespace/
-    /my_package
-       __init__.py
-       my_module.py
+   /the_namespace
+       /the_brick
+           __init__.py
+           my_module.py
 ```
 
 And the Python modules will have the custom top namespace as a prefix to imports:
 ```python
-from my_custom_namespace.my_package import my_function
+from my_custom_namespace.the_namespace.the_brick import my_function
 ```
 
 ##### How is this done?
