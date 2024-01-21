@@ -42,16 +42,13 @@ pip install the-built-artifact.whl
 
 ### Packaging a Library
 
-__NOTE:__ only supported for Poetry.
+The _Python tools for the Polylith Architecture_ has support for building libraries to be published at PyPI,
+even if it isn't the main use case.
 
-_Hatch support for packaging libraries is currently being developed._
+Important note: by default, the code in one library will share the same top namespace with other libraries that are
+built from the same Polylith Monorepo. To solve this, there's a feature available that will organize code according to a custom top namespace and re-write the imports.
 
-The plugin has support for building libraries to be published at PyPI, even if it isn't the main use case.
-But why? By default, the code in one library will share the same top namespace with other libraries that are
-built from the same Polylith Monorepo. 
-
-To solve this, there's a feature available that will organize code according to a custom top namespace and re-write the imports.
-
+#### Poetry
 You can choose a custom namespace to be used in the build process, by using the `--with-top-namespace` flag.
 This is available for __Python 3.9__ and above.
 
@@ -61,7 +58,26 @@ The `build-project` command, with a custom top namespace:
 poetry build-project --with-top-namespace my_custom_namespace
 ```
 
-By using the `--with-top-namespace` flag, the built artifact will look something like this:
+#### Hatch
+There is a Build Hook plugin for Polylith - `hatch-polylith-bricks` -  that is added like this:
+``` toml
+[build-system]
+requires = ["hatchling", "hatch-polylith-bricks"]
+build-backend = "hatchling.build"
+```
+
+As described in the [Projects & pyproject.toml](projects.md) section,
+the project-specific bricks are added in the `[tool.polylith.bricks]` section for libraries.
+
+A custom top namespace is defined in the hook configuration of `pyproject.toml`:
+
+``` toml
+[tool.hatch.build.hooks.polylith-bricks]
+top-namespace = "my_custom_namespace"
+```
+
+#### Result
+By using the Poetry build-project flag or the Hatch Build Hook, the built artifact will look something like this:
 ```shell
 my_custom_namespace/
     /my_package

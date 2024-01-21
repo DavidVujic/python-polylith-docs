@@ -57,3 +57,26 @@ Bricks are added in the _tool.hatch.build.force-include_ section:
 
 The `bases` and `components` folders are located at the workspace root.
 The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
+
+
+### Library setup for Hatch: the project-specific pyproject.toml file(s)
+There is a special setup to avoid namespace collision,
+when more than one library is packaged and published from the same Polylith Workspace.
+
+This includes a Hatch Build Hook plugin that is made for Polylith: `hatch-polylith-bricks`
+
+``` toml
+[build-system]
+requires = ["hatchling", "hatch-polylith-bricks"]
+build-backend = "hatchling.build"
+```
+
+Add bricks to a project by using `tool.polylith.bricks`;
+``` toml
+[tool.polylith.bricks]
+"../../bases/my_namespace/my_base" = "my_namespace/my_base"
+"../../components/my_namespace/my_component" = "my_namespace/my_component"
+"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
+```
+
+NOTE: this setup works for other artifacts too, but also needs the `hatch-polylith-bricks` plugin.
