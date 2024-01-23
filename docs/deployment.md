@@ -6,8 +6,8 @@ Packaging and deploying Polylith projects is done by using the Poetry Multiproje
 The `poetry build-project` command will make it possible to use relative package includes as how components and bases are added to Python Polylith projects. 
 Relative includes are currently not possible by default in __Poetry__, that is where the __Multiproject__ plugin comes in.
 
-## Hatch
-Hatch supports relative includes via the `force-include` configuration. Nothing extra needed!
+## Hatch and PDM
+Hatch and PDM support relative includes via the `[tool.poetry.bricks]` configuration. Nothing extra needed other than the build hooks.
 
 ## Packaging
 To collect the components and bases that are needed for a specific project, the tool introduces a _build_ step. 
@@ -29,6 +29,12 @@ cd path/to_project
 hatch build
 ```
 
+#### PDM
+``` shell
+cd path/to_project
+
+pdm build
+```
 
 This command will create a project specific _dist_ folder containing a _wheel_ and an _sdist_.
 You can use the available __build__ options with this command too.
@@ -58,21 +64,11 @@ The `build-project` command, with a custom top namespace:
 poetry build-project --with-top-namespace my_custom_namespace
 ```
 
-#### Hatch
-There is a Build Hook plugin for Polylith - `hatch-polylith-bricks` -  that is added like this:
-``` toml
-[build-system]
-requires = ["hatchling", "hatch-polylith-bricks"]
-build-backend = "hatchling.build"
-```
-
-As described in the [Projects & pyproject.toml](projects.md) section,
-the project-specific bricks are added in the `[tool.polylith.bricks]` section for libraries.
-
-A custom top namespace is defined in the hook configuration of `pyproject.toml`:
+#### Hatch and PDM
+A custom top namespace is defined in the project-specific `pyproject.toml`:
 
 ``` toml
-[tool.hatch.build.hooks.polylith-bricks]
+[tool.polylith.build]
 top-namespace = "my_custom_namespace"
 ```
 

@@ -20,12 +20,12 @@ packages = [
 # insert the needed 3rd party libraries here
 ```
 
-## Hatch
+## Hatch and PDM
 ``` toml
 [project]
 dependencies = [] # insert the needed 3rd party libraries here
 
-[tool.hatch.build.force-include]
+[tool.polylith.bricks]
 "../../bases/your_namespace/your_app" = "your_namespace/your_app"
 ```
 
@@ -56,6 +56,13 @@ poetry build-project --directory path/to/project
 cd path/to/project
 
 hatch build
+```
+
+### PDM
+``` shell
+cd path/to/project
+
+pdm build
 ```
 
 The output is a `wheel` and, more importantly, an `sdist` (a source distribution). It is essentially a _zip_ file containing all source code used in the project.
