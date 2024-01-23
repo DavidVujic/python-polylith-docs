@@ -46,37 +46,52 @@ dev-mode-dirs = ["components", "bases", "development", "."]
 ```
 
 ### The project-specific pyproject.toml file(s)
-Bricks are added in the _tool.hatch.build.force-include_ section:
-
-``` toml
-[tool.hatch.build.force-include]
-"../../bases/my_namespace/my_base" = "my_namespace/my_base"
-"../../components/my_namespace/my_component" = "my_namespace/my_component"
-"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
-```
-
-The `bases` and `components` folders are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
-
-
-### Library setup for Hatch: the project-specific pyproject.toml file(s)
-There is a special setup to avoid namespace collision,
-when more than one library is packaged and published from the same Polylith Workspace.
-
-This includes a Hatch Build Hook plugin that is made for Polylith: `hatch-polylith-bricks`
-
 ``` toml
 [build-system]
 requires = ["hatchling", "hatch-polylith-bricks"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.polylith-bricks]
+# this section is needed to enable the hook in the build process, even if empty.
 ```
 
-Add bricks to a project by using `tool.polylith.bricks`;
+Polylith bricks are added in the `[tool.polylith.bricks]` section:
+
 ``` toml
-[tool.polylith.bricks]
+[tool.poetry.bricks]
 "../../bases/my_namespace/my_base" = "my_namespace/my_base"
 "../../components/my_namespace/my_component" = "my_namespace/my_component"
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
 ```
 
-NOTE: this setup works for other artifacts too, but also needs the `hatch-polylith-bricks` plugin.
+## PDM
+
+### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+Add the `workspace` PDM build hook:
+``` toml
+[build-system]
+requires = ["pdm-backend", "pdm-polylith-workspace"]
+build-backend = "pdm.backend"
+```
+
+### The project-specific pyproject.toml file(s)
+
+Add the `project` PDM build hook:
+``` toml
+[build-system]
+requires = ["pdm-backend", "pdm-polylith-bricks"]
+build-backend = "pdm.backend"
+```
+
+Polylith bricks are added in the `[tool.polylith.bricks]` section:
+
+``` toml
+[tool.poetry.bricks]
+"../../bases/my_namespace/my_base" = "my_namespace/my_base"
+"../../components/my_namespace/my_component" = "my_namespace/my_component"
+"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
+```
+
+
+The `bases` and `components` folders are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.

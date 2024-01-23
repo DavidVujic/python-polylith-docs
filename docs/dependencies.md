@@ -36,3 +36,8 @@ poetry poly check --directory projects/my-project
 ``` shell
 hatch run poly check --directory projects/my-project
 ```
+
+### PDM
+``` shell
+pdm run poly check --directory projects/my-project
+```

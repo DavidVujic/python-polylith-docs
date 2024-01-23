@@ -20,6 +20,11 @@ poetry poly create component --name parser
 hatch run poly create component --name parser
 ```
 
+#### PDM
+``` shell
+pdm run poly create component --name parser
+```
+
 A corresponding unit test will also be created in the `test` folder:
 ``` python
 from my_top_namespace.parser import core
@@ -44,6 +49,11 @@ poetry run pytest
 hatch run pytest
 ```
 
+### PDM
+``` shell
+pdm run pytest
+```
+
 ### Running tests for changed code
 The __Python tools__ for the Polylith Architecture doesn't (yet) have a specific `test` command.
 You can use `poly diff` and your favorite test runner to only run the corresponding tests for changed code.
@@ -61,6 +71,11 @@ poetry poly diff --bricks --short
 hatch run poly diff --bricks --short
 ```
 
+#### PDM
+``` shell
+pdm run poly diff --bricks --short
+```
+
 You can use the output from the `poly diff` command to run specific tests.
 
 Storing a list of bricks in a bash variable:
@@ -73,6 +88,11 @@ changes="$(poetry poly diff --bricks --short)"
 #### Hatch
 ``` shell
 changes="$(hatch run poly diff --bricks --short)"
+```
+
+#### PDM
+``` shell
+changes="$(pdm run poly diff --bricks --short)"
 ```
 
 By having tests in the same kind of structure as the bricks,
@@ -98,6 +118,13 @@ poetry run pytest -k <<< echo "$query"
 query="${changes//,/ or }"
 
 hatch run pytest -k <<< echo "$query"
+```
+
+#### PDM
+``` shell
+query="${changes//,/ or }"
+
+pdm run pytest -k <<< echo "$query"
 ```
 
 ## Manually testing and running services

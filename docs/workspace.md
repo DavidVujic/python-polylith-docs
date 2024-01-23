@@ -9,8 +9,6 @@ workspace/
   components/
   development/
   projects/
-  
-  poetry.lock
 
   pyproject.toml
   workspace.toml

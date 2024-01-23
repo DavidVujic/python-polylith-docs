@@ -15,6 +15,11 @@ poetry poly create workspace --name my_example_namespace --theme loose
 hatch run poly create workspace --name my_example_namespace --theme loose
 ```
 
+### PDM
+``` shell
+pdm run poly create workspace --name my_example_namespace --theme loose
+```
+
 ### Options
 `--name` (required) the workspace name, that will be used as the single top namespace for all bricks. __Choose the name wisely.__
 Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
@@ -48,6 +53,11 @@ poetry poly create component --name my_example_component
 hatch run poly create component --name my_example_component
 ```
 
+### PDM
+``` shell
+pdm run poly create component --name my_example_component
+```
+
 ### Options
 `--name` (required) the name of the component.
 
@@ -65,6 +75,11 @@ poetry poly create base --name my_example_base
 ### Hatch
 ``` shell
 hatch run poly create base --name my_example_base
+```
+
+### PDM
+``` shell
+pdm run poly create base --name my_example_base
 ```
 
 ### Options
@@ -86,6 +101,11 @@ poetry poly create project --name my_example_project
 hatch run poly create project --name my_example_project
 ```
 
+### pdm
+``` shell
+pdm run poly create project --name my_example_project
+```
+
 ### Options
 `--name` (required) the name of the project.
 
@@ -105,6 +125,12 @@ poetry poly info
 hatch run poly info
 ```
 
+### PDM
+``` shell
+pdm run poly info
+```
+
+
 ### Options
 `--short` Display a view that is better adjusted to Workspaces with many projects.
 
@@ -119,6 +145,11 @@ poetry poly diff
 ### Hatch
 ``` shell
 hatch run poly diff
+```
+
+### PDM
+``` shell
+pdm run poly diff
 ```
 
 The `diff` command will compare the current state of the repository, compared to a `git tag`.
@@ -177,6 +208,29 @@ hatch run pytest -m <<< echo "$query"
 
 ```
 
+### PDM
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(pdm run poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+pdm run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+pdm run pytest -m <<< echo "$query"
+
+```
+
 ### Options
 `--short` Useful for determining what projects has been affected by the changes in CI.
 
@@ -193,6 +247,11 @@ poetry poly diff --since release
 #### Hatch
 ``` shell
 hatch run poly diff --since release
+```
+
+#### PDM
+``` shell
+pdm run poly diff --since release
 ```
 
 ## Libs
@@ -212,6 +271,11 @@ poetry lock --directory path/to-project
 ### Hatch
 ``` shell
 hatch run poly libs
+```
+
+### Hatch
+``` shell
+pdm run poly libs
 ```
 
 
@@ -248,6 +312,11 @@ and for expects a `poetry.lock` of a `Poetry` project to be present.
 hatch run poly check
 ```
 
+### PDM
+``` shell
+pdm run poly check
+```
+
 ### Options
 `--directory`
 Show info about libraries used in a specific project.
@@ -276,6 +345,11 @@ poetry poly sync
 ### Hatch
 ``` shell
 hatch run poly sync
+```
+
+### PDM
+``` shell
+pdm run poly sync
 ```
 
 This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.
