@@ -138,7 +138,7 @@ rye sync  # create a virtual environment and lock files
 Create a workspace, with a basic Polylith folder structure.
 
 ``` shell
-hatch run poly create workspace --name my_namespace --theme loose
+rye run poly create workspace --name my_namespace --theme loose
 ```
 
 `--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
