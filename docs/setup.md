@@ -166,6 +166,8 @@ Make Rye (and Hatch) aware of the way Polylith organizes source code:
 dev-mode-dirs = ["components", "bases", "development", "."]
 ```
 
+Remove the `[project.scripts]` and `[tool.hatch.build.targets.wheel]` sections.
+
 Run the `sync` command to update the virtual environment:
 
 ``` shell
