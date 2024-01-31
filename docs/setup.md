@@ -132,6 +132,8 @@ rye init my_repo  # name your repo
 
 cd my_repo
 
+rye add polylith-cli --dev
+
 rye sync  # create a virtual environment and lock files
 ```
 
