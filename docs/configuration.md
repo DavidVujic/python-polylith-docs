@@ -2,7 +2,7 @@
 
 The Polylith Workspace is configured using a __workspace.toml__ file at the root of the workspace.
 
-A default configuration is created when running the `poetry poly create workspace` command (see the [commands](commands.md) section).
+A default configuration is created when running the `poly create workspace` command (see the [commands](commands.md) section).
 
 Example of a workspace configuration:
 

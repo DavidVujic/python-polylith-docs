@@ -25,6 +25,11 @@ hatch run poly create component --name parser
 pdm run poly create component --name parser
 ```
 
+#### Rye
+``` shell
+rye run poly create component --name parser
+```
+
 A corresponding unit test will also be created in the `test` folder:
 ``` python
 from my_top_namespace.parser import core
@@ -39,19 +44,24 @@ Add the proper assertions to your tests during development of the bricks.
 ## Running tests
 Running Pytest from the workspace root:
 
-### Poetry
+#### Poetry
 ``` shell
 poetry run pytest
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run pytest
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run pytest
+```
+
+#### Rye
+``` shell
+rye run pytest
 ```
 
 ### Running tests for changed code
@@ -61,23 +71,7 @@ You can use `poly diff` and your favorite test runner to only run the correspond
 The `diff` command has support for displaying the changed bricks by using `--bricks`.
 Append the `--short` option for a scripting-friendly output.
 
-#### Poetry
-``` shell
-poetry poly diff --bricks --short
-```
-
-#### Hatch
-``` shell
-hatch run poly diff --bricks --short
-```
-
-#### PDM
-``` shell
-pdm run poly diff --bricks --short
-```
-
 You can use the output from the `poly diff` command to run specific tests.
-
 Storing a list of bricks in a bash variable:
 
 #### Poetry
@@ -93,6 +87,11 @@ changes="$(hatch run poly diff --bricks --short)"
 #### PDM
 ``` shell
 changes="$(pdm run poly diff --bricks --short)"
+```
+
+#### Rye
+``` shell
+changes="$(rye run poly diff --bricks --short)"
 ```
 
 By having tests in the same kind of structure as the bricks,
@@ -125,6 +124,13 @@ hatch run pytest -k <<< echo "$query"
 query="${changes//,/ or }"
 
 pdm run pytest -k <<< echo "$query"
+```
+
+#### Rye
+``` shell
+query="${changes//,/ or }"
+
+rye run pytest -k <<< echo "$query"
 ```
 
 ## Manually testing and running services

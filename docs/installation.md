@@ -15,7 +15,7 @@ poetry self add poetry-polylith-plugin
 
 Done!
 
-## Hatch and PDM
+## Hatch, PDM and Rye
 
-No external tools needed other than project-specific dependencies (see the [Setup](setup.md) and [Projects & pyproject.toml](projects.md) section),
+No globally added tools needed. Add the project-specific dependencies (see the [Setup](setup.md) and [Projects & pyproject.toml](projects.md) section),
 and the build hook plugins to add support for the Polylith structure and when packaging libraries.

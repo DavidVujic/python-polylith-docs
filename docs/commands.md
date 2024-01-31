@@ -5,19 +5,24 @@
 ## Create a workspace
 This will create a Polylith workspace, with a basic Polylith folder structure.
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly create workspace --name my_example_namespace --theme loose
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly create workspace --name my_example_namespace --theme loose
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly create workspace --name my_example_namespace --theme loose
+```
+
+#### Rye
+``` shell
+rye run poly create workspace --name my_example_namespace --theme loose
 ```
 
 ### Options
@@ -43,19 +48,24 @@ These are added for any initial commits of the folder structure, and can safely 
 ## Create a component
 This command will create a component - i.e. a Python package in a namespaced folder.
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly create component --name my_example_component
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly create component --name my_example_component
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly create component --name my_example_component
+```
+
+#### Rye
+``` shell
+rye run poly create component --name my_example_component
 ```
 
 ### Options
@@ -67,19 +77,24 @@ It will also be added in the README, when enabled in the configuration. See [con
 ## Create a base
 This command will create a base - i.e. a Python package in a namespaced folder.
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly create base --name my_example_base
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly create base --name my_example_base
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly create base --name my_example_base
+```
+
+#### Rye
+``` shell
+rye run poly create base --name my_example_base
 ```
 
 ### Options
@@ -91,19 +106,24 @@ It will also be added in the README, when enabled in the configuration. See [con
 ## Create a project
 This command will create a project - i.e. a pyproject.toml in a project folder.
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly create project --name my_example_project
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly create project --name my_example_project
 ```
 
-### pdm
+#### PDM
 ``` shell
 pdm run poly create project --name my_example_project
+```
+
+#### Rye
+``` shell
+rye run poly create project --name my_example_project
 ```
 
 ### Options
@@ -115,21 +135,25 @@ pdm run poly create project --name my_example_project
 ## Info
 Show info about the workspace:
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly info
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly info
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly info
 ```
 
+#### Rye
+``` shell
+rye run poly info
+```
 
 ### Options
 `--short` Display a view that is better adjusted to Workspaces with many projects.
@@ -137,19 +161,24 @@ pdm run poly info
 ## Diff
 Shows what has changed since the most recent stable point in time:
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly diff
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly diff
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly diff
+```
+
+#### Rye
+``` shell
+rye run poly diff
 ```
 
 The `diff` command will compare the current state of the repository, compared to a `git tag`.
@@ -158,85 +187,6 @@ The pattern can be configured in `workspace.toml`.
 
 The `diff` command is useful in a CI environment, to determine if a project should be deployed or not.
 It is also useful when running tests for changed bricks only.
-
-
-### Testing
-Example, how to run __pytest__ for changed bricks only.
-
-### Poetry
-``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(poetry poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-poetry run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-poetry run pytest -m <<< echo "$query"
-```
-
-### Hatch
-``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(hatch run poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-hatch run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-hatch run pytest -m <<< echo "$query"
-
-```
-
-### PDM
-``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(pdm run poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-pdm run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-pdm run pytest -m <<< echo "$query"
-
-```
-
-### Options
-`--short` Useful for determining what projects has been affected by the changes in CI.
-
-`--bricks` Useful for displaying changed bricks only. It will print a comma-separated list of bricks when using it with the `--short` option.
-
-`--since` Useful for displaying changes since a `stable` or `release` tag.
 
 Example:
 #### Poetry
@@ -254,10 +204,23 @@ hatch run poly diff --since release
 pdm run poly diff --since release
 ```
 
+#### Rye
+``` shell
+rye run poly diff --since release
+```
+
+### Options
+`--short` Useful for determining what projects has been affected by the changes in CI.
+
+`--bricks` Useful for displaying changed bricks only. It will print a comma-separated list of bricks when using it with the `--short` option.
+
+`--since` Useful for displaying changes since a `stable` or `release` tag.
+
+
 ## Libs
 Show info about the third-party libraries used in the workspace:
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly libs
 ```
@@ -268,16 +231,20 @@ If missing, there is a Poetry command available:
 poetry lock --directory path/to-project
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly libs
 ```
 
-### Hatch
+### PDM
 ``` shell
 pdm run poly libs
 ```
 
+#### Rye
+``` shell
+rye run poly libs
+```
 
 ### Options
 `--directory`
@@ -299,7 +266,7 @@ Using `--alias opencv-python=cv2` will make the command treat the alias as a thi
 ## Check
 Validates the Polylith workspace, checking for any missing dependencies (bricks and third-party libraries):
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly check
 ```
@@ -307,14 +274,19 @@ poetry poly check
 This feature is built on top of the `poly libs` command,
 and for expects a `poetry.lock` of a `Poetry` project to be present.
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly check
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly check
+```
+
+#### Rye
+``` shell
+rye run poly check
 ```
 
 ### Options
@@ -337,19 +309,24 @@ Using `--alias opencv-python=cv2` will make the command treat the alias as a thi
 ## Sync
 Keep projects in sync with the actual usage of bricks in source code.
 
-### Poetry
+#### Poetry
 ``` shell
 poetry poly sync
 ```
 
-### Hatch
+#### Hatch
 ``` shell
 hatch run poly sync
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly sync
+```
+
+#### Rye
+``` shell
+rye run poly sync
 ```
 
 This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.
@@ -360,3 +337,94 @@ This feature is useful for keeping projects in sync. The command will analyze co
 ### Options
 `--directory`
 Synchronize a specific project.
+
+## Testing
+Example, how to run __pytest__ for changed bricks only.
+
+#### Poetry
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(poetry poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+poetry run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+poetry run pytest -m <<< echo "$query"
+```
+
+#### Hatch
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(hatch run poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+hatch run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+hatch run pytest -m <<< echo "$query"
+```
+
+#### PDM
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(pdm run poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+pdm run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+pdm run pytest -m <<< echo "$query"
+```
+
+#### Rye
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(rye run poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+rye run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+rye run pytest -m <<< echo "$query"
+```
