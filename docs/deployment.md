@@ -6,7 +6,7 @@ Packaging and deploying Polylith projects is done by using the Poetry Multiproje
 The `poetry build-project` command will make it possible to use relative package includes as how components and bases are added to Python Polylith projects. 
 Relative includes are currently not possible by default in __Poetry__, that is where the __Multiproject__ plugin comes in.
 
-## Hatch and PDM
+## Hatch, PDM and Rye
 Hatch and PDM support relative includes via the `[tool.poetry.bricks]` configuration. Nothing extra needed other than the build hooks.
 
 ## Packaging
@@ -34,6 +34,15 @@ hatch build
 cd path/to_project
 
 pdm build
+```
+
+#### Rye
+``` shell
+cd path/to_project
+
+# run the build command for each output
+rye build --wheel
+rye build --sdist
 ```
 
 This command will create a project specific _dist_ folder containing a _wheel_ and an _sdist_.
@@ -64,7 +73,7 @@ The `build-project` command, with a custom top namespace:
 poetry build-project --with-top-namespace my_custom_namespace
 ```
 
-#### Hatch and PDM
+#### Hatch, PDM and Rye
 A custom top namespace is defined in the project-specific `pyproject.toml`:
 
 ``` toml

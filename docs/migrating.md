@@ -20,7 +20,7 @@ packages = [
 # insert the needed 3rd party libraries here
 ```
 
-## Hatch and PDM
+## Hatch, PDM and Rye
 ``` toml
 [project]
 dependencies = [] # insert the needed 3rd party libraries here
@@ -63,6 +63,13 @@ hatch build
 cd path/to/project
 
 pdm build
+```
+
+#### Rye
+``` shell
+cd path/to_project
+
+rye build --sdist
 ```
 
 The output is a `wheel` and, more importantly, an `sdist` (a source distribution). It is essentially a _zip_ file containing all source code used in the project.

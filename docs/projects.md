@@ -58,7 +58,7 @@ build-backend = "hatchling.build"
 Polylith bricks are added in the `[tool.polylith.bricks]` section:
 
 ``` toml
-[tool.poetry.bricks]
+[tool.polylith.bricks]
 "../../bases/my_namespace/my_base" = "my_namespace/my_base"
 "../../components/my_namespace/my_component" = "my_namespace/my_component"
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
@@ -86,12 +86,61 @@ build-backend = "pdm.backend"
 Polylith bricks are added in the `[tool.polylith.bricks]` section:
 
 ``` toml
-[tool.poetry.bricks]
+[tool.polylith.bricks]
 "../../bases/my_namespace/my_base" = "my_namespace/my_base"
 "../../components/my_namespace/my_component" = "my_namespace/my_component"
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
 ```
 
+## Rye
+
+### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
+
+Add it manually, or by running `rye add polylith-cli --dev`:
+
+``` toml
+[tool.rye]
+dev-dependencies = ["polylith-cli"]
+```
+
+The default build backend for Rye is Hatch.
+Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
+
+``` toml
+[build-system]
+requires = ["hatchling", "hatch-polylith-bricks"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.polylith-bricks]
+# this section is needed to enable the hook in the build process, even if empty.
+```
+
+Make Rye (and Hatch) aware of the way Polylith organizes source code:
+``` toml
+[tool.hatch.build]
+dev-mode-dirs = ["components", "bases", "development", "."]
+```
+
+
+### The project-specific pyproject.toml file(s)
+``` toml
+[build-system]
+requires = ["hatchling", "hatch-polylith-bricks"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.polylith-bricks]
+# this section is needed to enable the hook in the build process, even if empty.
+```
+
+Polylith bricks are added in the `[tool.polylith.bricks]` section:
+
+``` toml
+[tool.polylith.bricks]
+"../../bases/my_namespace/my_base" = "my_namespace/my_base"
+"../../components/my_namespace/my_component" = "my_namespace/my_component"
+"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
+```
 
 The `bases` and `components` folders are located at the workspace root.
 The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.

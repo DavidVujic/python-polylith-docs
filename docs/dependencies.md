@@ -41,3 +41,8 @@ hatch run poly check --directory projects/my-project
 ``` shell
 pdm run poly check --directory projects/my-project
 ```
+
+### Rye
+``` shell
+rye run poly check --directory projects/my-project
+```
