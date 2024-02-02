@@ -3,7 +3,9 @@
 ## Videos
 - Python with the Polylith Architecture - [an overview](https://youtu.be/3w2ffHZb6gc) (about 15 minutes)
 - Python Poetry Polylith Plugin - [the tooling support & commands](https://youtu.be/AdKpTP9pjHI) (about 13 minutes)
-- The Developer Experience - [developing a Dad Joke Service with Polylith](https://youtu.be/oG4OFEer3Tk) (about 27 minutes)
+- The Developer Experience
+    - [developing a Dad Joke Service with Polylith](https://youtu.be/oG4OFEer3Tk) (about 27 minutes)
+    - [the Polylith Dev Experience using Hatch and Rye](https://youtu.be/BXPQBXuiRwM?si=rQ70ESrY-hRDazBi) (about 7 minutes)
 - The standalone Polylith CLI - [An intro to the polylith-cli - tooling support for Polylith with Python and Hatch](https://youtu.be/K__3Uah3by0)
 
 ## Talks
