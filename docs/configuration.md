@@ -4,6 +4,8 @@ The Polylith Workspace is configured using a __workspace.toml__ file at the root
 
 A default configuration is created when running the `poly create workspace` command (see the [commands](commands.md) section).
 
+> :material-information: As an alternative, you can put the configuration in the __top__ `pyproject.toml`.
+
 Example of a workspace configuration:
 
 ``` toml
@@ -26,7 +28,7 @@ enabled = true
 
 
 ### Tags
-Check for changes since a tag. Configure the tag pattern in the `workspace.toml` file.
+Check for changes since a tag. Configure the tag pattern.
 
 The preferred way of defining tag patterns is:
 ``` toml

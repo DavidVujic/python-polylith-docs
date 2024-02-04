@@ -183,7 +183,7 @@ rye run poly diff
 
 The `diff` command will compare the current state of the repository, compared to a `git tag`.
 The tool will look for the latest tag according to a certain pattern, such as `stable-*`.
-The pattern can be configured in `workspace.toml`.
+The pattern can be configured in the Workspace [configuration](configuration.md).
 
 The `diff` command is useful in a CI environment, to determine if a project should be deployed or not.
 It is also useful when running tests for changed bricks only.
