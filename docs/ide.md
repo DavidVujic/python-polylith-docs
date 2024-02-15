@@ -69,3 +69,21 @@ PyCharm will ask about what interpreter to use when opening a Python file. Make 
 Everything should now be set up correctly for PyCharm!
 
 ![PyCharm Virtual Environment setup](img/pycharm-venv-setup.gif)
+
+### Breaking nuance: refereces corrections
+
+In PyCharm, if you try to move a file from, say, one of the bases to one of the components, the IDE will show you a confirmation dialog with `Search for references` checkbox, which may or may not be checked by default.
+
+It's better to uncheck it.
+
+This is because, if the name of your file is generic (i.e. files with the same name can be encountered in other places in this repo), PyCharm would look for reference to it and get confused, and may decide that there is an error that should be fixed. It would then  create a `__init__.py` file in the core of either `components/{namespace}` or `bases/{namespace}` directory, and this would lead to incorrectly interpreting the project structure. 
+
+In practice, this means that either components won't work, or bases, or both. This can be spotted by looking at the component-level (or base-level) `__init__.py` files, where the imports would be marked as faulty.
+
+This issue can be fixed by one of the following:
+
+- remove the automatically created `__init__.py`;
+- re-create your virtual environment;
+- revert your git repository to the commit before moving the file.
+
+These methods are listed in the order they should be attempted - if one works, no need to do the others. The first one should work for most cases.
