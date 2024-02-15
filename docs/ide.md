@@ -70,7 +70,7 @@ Everything should now be set up correctly for PyCharm!
 
 ![PyCharm Virtual Environment setup](img/pycharm-venv-setup.gif)
 
-### Breaking nuance: refereces corrections
+### Breaking nuance: references corrections
 
 In PyCharm, if you try to move a file from, say, one of the bases to one of the components, the IDE will show you a confirmation dialog with `Search for references` checkbox, which may or may not be checked by default.
 
