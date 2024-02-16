@@ -236,7 +236,7 @@ poetry lock --directory path/to-project
 hatch run poly libs
 ```
 
-### PDM
+#### PDM
 ``` shell
 pdm run poly libs
 ```
@@ -337,6 +337,37 @@ This feature is useful for keeping projects in sync. The command will analyze co
 ### Options
 `--directory`
 Synchronize a specific project.
+
+
+## Deps
+Show dependencies between bricks.
+
+#### Poetry
+``` shell
+poetry poly deps
+```
+
+#### Hatch
+``` shell
+hatch run poly deps
+```
+
+#### PDM
+``` shell
+pdm run poly deps
+```
+
+#### Rye
+``` shell
+rye run poly deps
+```
+
+### Options
+`--directory`
+Show brick depencencies for a specific project.
+
+`--brick`
+A detailed view for a single brick and the dependent bricks: used by, and uses.
 
 ## Testing
 Example, how to run __pytest__ for changed bricks only.
