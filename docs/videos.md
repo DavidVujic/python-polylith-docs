@@ -23,6 +23,7 @@
 - [Python FastAPI Microservices with Polylith](https://davidvujic.blogspot.com/2023/07/python-fastapi-microservices-with-polylith.html)
 - [Kafka messaging with Python & Polylith](https://davidvujic.blogspot.com/2023/08/kafka-messaging-with-python-and-polylith.html)
 - [Runestone Monorepo and Server Structure](https://medium.com/@thaopham03/runestone-monorepo-and-server-structure-0754dbc52f48) by Minh-Thao Pham
+- [Python Monorepo Visualization](https://davidvujic.blogspot.com/2024/02/python-monorepo-visualization.html)
 
 Got an article or video about this subject that you want to share here? You are very much welcome to make a Pull Request,
 or a Github issue to the [python-polylith-docs](https://github.com/DavidVujic/python-polylith-docs) repo.
