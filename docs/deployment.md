@@ -99,3 +99,17 @@ from my_custom_namespace.the_namespace.the_brick import my_function
 ##### How is this done?
 The command uses AST (Abstract Syntax Tree) parsing to modify source code.
 The Python built-in `ast` module is used to parse and un-parse Python code.
+
+
+#### Script Entrypoints
+ If you have a script entrypoint,
+remember to manually add the custom namespace in your `pyproject.toml`.
+
+Example (Poetry):
+
+``` toml
+# manually adding the my_custom_namespace at the beginning
+
+[tool.poetry.scripts]
+my_script = "my_custom_namespace.the_namespace.the_brick.my_module:main"
+```
