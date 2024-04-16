@@ -150,16 +150,7 @@ __Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep
 
 
 #### Edit the configuration
-The default build backend for Rye is Hatch. Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
-``` toml
-[build-system]
-requires = ["hatchling", "hatch-polylith-bricks"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.hooks.polylith-bricks]
-# this section is needed to enable the hook in the build process, even if empty.
-```
-
+The default build backend for Rye is Hatch.
 Make Rye (and Hatch) aware of the way Polylith organizes source code:
 ``` toml
 [tool.hatch.build]
