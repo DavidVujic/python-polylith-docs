@@ -7,7 +7,26 @@ The `poetry build-project` command will make it possible to use relative package
 Relative includes are currently not possible by default in __Poetry__, that is where the __Multiproject__ plugin comes in.
 
 ## Hatch, PDM and Rye
-Hatch and PDM support relative includes via the `[tool.poetry.bricks]` configuration. Nothing extra needed other than the build hooks.
+Hatch and PDM support relative includes via the `[tool.poetry.bricks]` configuration.
+Nothing extra needed other than the build hooks.
+
+### Building source distributions (sdist)?
+If you will distribute an `sdist` as the primary way to install your package,
+you will need to add the path in the project-specific `pyroject.toml`.
+
+If you only provide `wheel` distributions, this is optional.
+
+#### Hatch and Rye
+```toml
+[tool.hatch.build.targets.wheel]
+packages = ["<your top namespace here>"]
+```
+
+#### PDM
+```toml
+[tool.pdm.build]
+includes = ["<your top namespace here>/"]
+```
 
 ## Packaging
 To collect the components and bases that are needed for a specific project, the tool introduces a _build_ step. 
