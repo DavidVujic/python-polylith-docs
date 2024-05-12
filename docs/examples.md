@@ -8,6 +8,7 @@ Here are some examples of how to setup __Python__ with the Polylith Architecture
     - [for Hatch](https://github.com/DavidVujic/python-polylith-example-hatch)
     - [for PDM](https://github.com/DavidVujic/python-polylith-example-pdm)
     - [for Rye](https://github.com/DavidVujic/python-polylith-example-rye)
+    - [for Pants](https://github.com/DavidVujic/python-polylith-example-pants)
 - [Python Polylith Microservices Example](https://github.com/ttamg/python-polylith-microservices-example) by Matt Gosden
 - [Aws CDK App with Polylith](https://github.com/ybenitezf/cdk_polylith) by Yoel Benítez Fonseca
 

@@ -170,5 +170,9 @@ Finally, remove the `src` boilerplate code that was added by Rye in the first st
 rm -r src
 ```
 
+### Pantsbuild (aka Pants)
+Have a look in the Pants-specific [example repository](examples.md) for details on the setup.
+You will find examples of combining Pants with Polylith, by using the Hatch build backend in the project-specific configurations.
+
 
 You will find more documentation about the available commands in the [commands](commands.md) section.
