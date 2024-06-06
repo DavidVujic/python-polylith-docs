@@ -37,12 +37,14 @@ stable = "stable-*"
 release = "v[0-9]*"
 ```
 
-It is also possible to define one single tag pattern in the `[tool.polylith]` section.
-Note: if both exists, the `[tool.polylith.tag.pattern]` will override.
+By default, Polylith uses the `-committerdate` when fetching tags with the underlying `git` command.
+The sorting might be incorrect when using _annotated tags_. To solve this, you can configure
+the sorting.
 
+Example, setting a different sorting option than the default:
 ``` toml
-[tool.polylith]
-git_tag_pattern = "stable-*"
+[tool.polylith.tag]
+sorting = ["-creatordate"]
 ```
 
 ### Components and bases documentation
