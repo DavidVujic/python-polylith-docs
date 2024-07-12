@@ -64,6 +64,18 @@ pdm run pytest
 rye run pytest
 ```
 
+#### Running tests with pytest and the TDD Theme
+This configuration ensures the entire namespace of your brick is included
+when `pytest` does it's test lookup. Without it, `pytest` will raise errors
+because of the default way it does module lookups. This occurs when using Polylith with the _TDD_ theme.
+
+``` toml
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+```
+
 ### Running tests for changed code
 The __Python tools__ for the Polylith Architecture doesn't (yet) have a specific `test` command.
 You can use `poly diff` and your favorite test runner to only run the corresponding tests for changed code.
