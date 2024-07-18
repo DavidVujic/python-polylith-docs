@@ -294,8 +294,9 @@ rye run poly check
 Show info about libraries used in a specific project.
 
 `--strict`
-A more narrow way of comparing third-party libraries and the actual imports.
-This is useful to rule out possible false positives.
+A more narrow way of comparing third-party libraries, versions and the actual imports.
+This is useful to rule out possible false positives,
+and to ensure using the same version strings for the libraries across the workspace.
 
 `--alias`
 Useful when an import differ from the library name.
