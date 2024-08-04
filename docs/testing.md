@@ -114,7 +114,7 @@ You can also name the individual test functions to include brick names, or use d
 Transform the result of the `poly diff` command into a Pytest _keyword_ or _marker expression_.
 (i.e. from __hello,world,something__ to __hello or world or something__).
 
-- `-q` is for running tests by keyword expressions.
+- `-k` is for running tests by keyword expressions.
 - `-m` is for running tests by marker expressions.
 
 #### Poetry
