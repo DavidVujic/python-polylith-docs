@@ -9,7 +9,8 @@
 - The standalone Polylith CLI - [An intro to the polylith-cli - tooling support for Polylith with Python and Hatch](https://youtu.be/K__3Uah3by0)
 
 ## Talks
-- __Python Web Conference 2023__ - Microservices, Monolith, Monorepos: the differences & how nicely Polylith solves the trade offs - [A Fresh Take on Monorepos in Python](https://youtu.be/HU61vjZPPfQ) (about 36 minutes)
+- __PyCon Sweden 2023__: [Python Developer Experience with Polylith](https://youtu.be/_BA1yDHdbbs?si=LgV-5Gh_1UCYzNpY) (about 25 minutes + Q&A)
+- __Python Web Conference 2023__: [A Fresh Take on Monorepos in Python](https://youtu.be/HU61vjZPPfQ) (about 36 minutes) Microservices, Monolith, Monorepos: the differences & how nicely Polylith solves the trade offs.
 
 ## Podcasts
 - __Talk Python To Me__: [Monorepos in Python](https://talkpython.fm/episodes/show/399/monorepos-in-python)
