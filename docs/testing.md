@@ -106,6 +106,10 @@ changes="$(pdm run poly diff --bricks --short)"
 changes="$(rye run poly diff --bricks --short)"
 ```
 
+To include bricks that use any of the changed bricks, you can add the `--deps` option.
+This will append any dependent bricks to the output.
+
+
 By having tests in the same kind of structure as the bricks,
 you can use the output from the `poly diff` command to pick the tests to run.
 You can also name the individual test functions to include brick names, or use decorators (such as `pytest` markers).

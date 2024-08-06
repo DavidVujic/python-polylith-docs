@@ -216,6 +216,7 @@ rye run poly diff --since release
 
 `--since` Useful for displaying changes since a `stable` or `release` tag.
 
+`--deps` Useful for displaying the bricks that are used by the changed bricks. Use it with the `--bricks` option.
 
 ## Libs
 Show info about the third-party libraries used in the workspace:
