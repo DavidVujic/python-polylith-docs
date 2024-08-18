@@ -20,7 +20,7 @@ packages = [
 # insert the needed 3rd party libraries here
 ```
 
-## Hatch, PDM and Rye
+## Hatch, PDM, Rye and uv
 ``` toml
 [project]
 dependencies = [] # insert the needed 3rd party libraries here
@@ -65,11 +65,18 @@ cd path/to/project
 pdm build
 ```
 
-#### Rye
+### Rye
 ``` shell
 cd path/to_project
 
 rye build --sdist
+```
+
+### uv
+``` shell
+cd path/to_project
+
+uvx --from build pyproject-build --installer uv
 ```
 
 The output is a `wheel` and, more importantly, an `sdist` (a source distribution). It is essentially a _zip_ file containing all source code used in the project.

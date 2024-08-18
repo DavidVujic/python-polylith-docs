@@ -30,6 +30,11 @@ pdm run poly create component --name parser
 rye run poly create component --name parser
 ```
 
+#### uv
+``` shell
+uv run poly create component --name parser
+```
+
 A corresponding unit test will also be created in the `test` folder:
 ``` python
 from my_top_namespace.parser import core
@@ -62,6 +67,11 @@ pdm run pytest
 #### Rye
 ``` shell
 rye run pytest
+```
+
+#### uv
+``` shell
+uv run pytest
 ```
 
 #### Running tests with pytest and the TDD Theme
@@ -106,6 +116,11 @@ changes="$(pdm run poly diff --bricks --short)"
 changes="$(rye run poly diff --bricks --short)"
 ```
 
+#### uv
+``` shell
+changes="$(uv run poly diff --bricks --short)"
+```
+
 To include bricks that use any of the changed bricks, you can add the `--deps` option.
 This will append any dependent bricks to the output.
 
@@ -147,6 +162,13 @@ pdm run pytest -k <<< echo "$query"
 query="${changes//,/ or }"
 
 rye run pytest -k <<< echo "$query"
+```
+
+#### uv
+``` shell
+query="${changes//,/ or }"
+
+uv run pytest -k <<< echo "$query"
 ```
 
 ## Manually testing and running services

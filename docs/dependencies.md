@@ -46,3 +46,8 @@ pdm run poly check --directory projects/my-project
 ``` shell
 rye run poly check --directory projects/my-project
 ```
+
+### uv
+``` shell
+uv run poly check --directory projects/my-project
+```

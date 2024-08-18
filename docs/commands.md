@@ -25,6 +25,11 @@ pdm run poly create workspace --name my_example_namespace --theme loose
 rye run poly create workspace --name my_example_namespace --theme loose
 ```
 
+#### uv
+``` shell
+uv run poly create workspace --name my_example_namespace --theme loose
+```
+
 ### Options
 `--name` (required) the workspace name, that will be used as the single top namespace for all bricks. __Choose the name wisely.__
 Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
@@ -68,6 +73,11 @@ pdm run poly create component --name my_example_component
 rye run poly create component --name my_example_component
 ```
 
+#### uv
+``` shell
+uv run poly create component --name my_example_component
+```
+
 ### Options
 `--name` (required) the name of the component.
 
@@ -95,6 +105,11 @@ pdm run poly create base --name my_example_base
 #### Rye
 ``` shell
 rye run poly create base --name my_example_base
+```
+
+#### uv
+``` shell
+uv run poly create base --name my_example_base
 ```
 
 ### Options
@@ -126,6 +141,11 @@ pdm run poly create project --name my_example_project
 rye run poly create project --name my_example_project
 ```
 
+#### uv
+``` shell
+uv run poly create project --name my_example_project
+```
+
 ### Options
 `--name` (required) the name of the project.
 
@@ -155,6 +175,11 @@ pdm run poly info
 rye run poly info
 ```
 
+#### uv
+``` shell
+uv run poly info
+```
+
 ### Options
 `--short` Display a view that is better adjusted to Workspaces with many projects.
 
@@ -179,6 +204,11 @@ pdm run poly diff
 #### Rye
 ``` shell
 rye run poly diff
+```
+
+#### uv
+``` shell
+uv run poly diff
 ```
 
 The `diff` command will compare the current state of the repository, compared to a `git tag`.
@@ -207,6 +237,11 @@ pdm run poly diff --since release
 #### Rye
 ``` shell
 rye run poly diff --since release
+```
+
+#### Rye
+``` shell
+uv run poly diff --since release
 ```
 
 ### Options
@@ -245,6 +280,11 @@ pdm run poly libs
 #### Rye
 ``` shell
 rye run poly libs
+```
+
+#### uv
+``` shell
+uv run poly libs
 ```
 
 ### Options
@@ -290,6 +330,11 @@ pdm run poly check
 rye run poly check
 ```
 
+#### uv
+``` shell
+uv run poly check
+```
+
 ### Options
 `--directory`
 Show info about libraries used in a specific project.
@@ -331,6 +376,11 @@ pdm run poly sync
 rye run poly sync
 ```
 
+#### uv
+``` shell
+uv run poly sync
+```
+
 This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.
 
 - projects: will add missing bricks to the project specific _pyproject.toml_, when imported by any of the already added bricks.
@@ -362,6 +412,11 @@ pdm run poly deps
 #### Rye
 ``` shell
 rye run poly deps
+```
+
+#### uv
+``` shell
+uv run poly deps
 ```
 
 ### Options
@@ -460,4 +515,26 @@ or run the test, filtered by pytest markers
 
 ``` shell
 rye run pytest -m <<< echo "$query"
+```
+
+#### uv
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(uv run poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+uv run pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+uv run pytest -m <<< echo "$query"
 ```
