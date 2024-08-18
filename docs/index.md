@@ -46,7 +46,7 @@ In short, Polylith is about:
 The __Python tools for the Polylith Architecture__ is available as two options:
 
 - A __Poetry__ plugin. The plugin will add Polylith specific features to Poetry.
-- A standalone CLI supporting __Hatch__, __PDM__, __Rye__ and __Pantsbuild__ (and Poetry).
+- A standalone CLI supporting __Hatch__, __PDM__, __Rye__, __Pantsbuild__ and __uv__ (and Poetry).
 
 ### Use cases
 

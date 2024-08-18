@@ -157,7 +157,7 @@ Make Rye (and Hatch) aware of the way Polylith organizes source code:
 dev-mode-dirs = ["components", "bases", "development", "."]
 ```
 
-Remove the `[project.scripts]` and `[tool.hatch.build.targets.wheel]` sections.
+Remove the `[tool.hatch.build.targets.wheel]` section.
 
 Run the `sync` command to update the virtual environment:
 
@@ -166,6 +166,47 @@ rye sync
 ```
 
 Finally, remove the `src` boilerplate code that was added by Rye in the first step:
+``` shell
+rm -r src
+```
+
+### uv
+``` shell
+uv init my_repo  # name your repo
+
+cd my_repo
+
+uv add polylith-cli --dev
+
+uv sync  # create a virtual environment and lock files
+```
+
+Create a workspace, with a basic Polylith folder structure.
+
+``` shell
+uv run poly create workspace --name my_namespace --theme loose
+```
+
+`--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
+__Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
+
+`--theme` the structure of the workspace, `loose` is the recommended structure for Python.
+
+#### Edit the configuration
+The default build backend for uv is Hatch.
+Make uv (and Hatch) aware of the way Polylith organizes source code:
+``` toml
+[tool.hatch.build]
+dev-mode-dirs = ["components", "bases", "development", "."]
+```
+
+Run the `sync` command to update the virtual environment:
+
+``` shell
+uv sync
+```
+
+Finally, remove the `src` boilerplate code that was added by uv in the first step:
 ``` shell
 rm -r src
 ```
