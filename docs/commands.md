@@ -250,6 +250,8 @@ uv run poly diff --since release
 `--bricks` Useful for displaying changed bricks only. It will print a comma-separated list of bricks when using it with the `--short` option.
 
 `--since` Useful for displaying changes since a `stable` or `release` tag.
+The tag patterns are defined in the Workspace [configuration](configuration.md).
+This option also support using a specific commit hash.
 
 `--deps` Useful for displaying the bricks that are used by the changed bricks. Use it with the `--bricks` option.
 
