@@ -155,15 +155,11 @@ dev-dependencies = ["polylith-cli"]
 ```
 
 The default build backend for uv is Hatch.
-Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
 
 ``` toml
 [build-system]
-requires = ["hatchling", "hatch-polylith-bricks"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
-
-[tool.hatch.build.hooks.polylith-bricks]
-# this section is needed to enable the hook in the build process, even if empty.
 ```
 
 Make uv (and Hatch) aware of the way Polylith organizes source code:
@@ -174,6 +170,7 @@ dev-mode-dirs = ["components", "bases", "development", "."]
 
 
 ### The project-specific pyproject.toml file(s)
+Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
 ``` toml
 [build-system]
 requires = ["hatchling", "hatch-polylith-bricks"]
