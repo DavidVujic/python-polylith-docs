@@ -28,6 +28,12 @@ and development setup for REPL Driven Development or Jupyter notebooks.
 ### BritNed
 > [BritNed](https://www.britned.com/) - Electricity interconnector, connecting the United Kingdom with the European mainland through the Netherlands. Polylith-Python is the foundation under our (internal) data warehouse which extracts/transforms data from multiple systems in our operation.
 
+
+### Attendi
+> [Attendi](https://attendi.nl/) - Provides speech-driven and natural language reporting APIs for healthcare professionals and electronic health records, transforming screen time into valuable moments together with their patients.
+
+How Attendi use Polylith: [Moving all our Python code to a monorepo: pytendi](https://attendi.nl/moving-all-our-python-code-to-a-monorepo-pytendi/)
+
 ## Other
 In addition to the examples and Production Systems,
 there is also the actual [Python tools for the Polylith Architecture](https://github.com/DavidVujic/python-polylith)
