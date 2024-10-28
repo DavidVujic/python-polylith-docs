@@ -193,7 +193,14 @@ __Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
 
 #### Edit the configuration
-The default build backend for uv is Hatch.
+Make sure that the build backend for uv is set to Hatch.
+
+``` toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
 Make uv (and Hatch) aware of the way Polylith organizes source code:
 ``` toml
 [tool.hatch.build]
