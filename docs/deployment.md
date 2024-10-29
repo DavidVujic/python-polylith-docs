@@ -38,42 +38,36 @@ This is the preferred way for Polylith projects.
 
 #### Poetry
 ``` shell
-poetry build-project --directory path/to/project
+poetry build-project --directory projects/the_project
 ```
 
 #### Hatch
 ``` shell
-cd path/to_project
+cd projects/the_project
 
 hatch build
 ```
 
 #### PDM
 ``` shell
-cd path/to_project
+cd projects/the_project
 
 pdm build
 ```
 
 #### Rye
 ``` shell
-cd path/to_project
+cd projects/the_project
 
-# run the build command for each output
 rye build --wheel
-rye build --sdist
 ```
 
 #### uv
 ``` shell
-cd path/to_project
-
-uvx --from build pyproject-build --installer uv
+uv build --wheel projects/the_project
 ```
 
-
-This command will create a project specific _dist_ folder containing a _wheel_ and an _sdist_.
-You can use the available __build__ options with this command too.
+This command will create a project specific _dist_ folder containing a _wheel_ with all the needed bricks.
 
 ## Deploying
 You can use the built artifacts to install your service in your preffered way, just by running
