@@ -218,9 +218,27 @@ Finally, remove the `src` boilerplate code that was added by uv in the first ste
 rm -r src
 ```
 
+
 ### Pantsbuild (aka Pants)
 Have a look in the Pants-specific [example repository](examples.md) for details on the setup.
 You will find examples of combining Pants with Polylith, by using the Hatch build backend in the project-specific configurations.
 
 
-You will find more documentation about the available commands in the [commands](commands.md) section.
+## Next steps
+You now have the repo structured as a Polylith Workspace. Great!
+Add Python code to the Workspace by creating _bases_ and _components_.
+The common name is _bricks_ (like LEGO bricks).
+There's more about the Workspace and the bricks in the [Polylith Workspace](workspace.md) section.
+
+The Polylith tool includes commands to create _bases_ and _components_.
+You will find documentation about commands in the [Commands](commands.md) section.
+
+Example (using uv):
+
+``` shell
+# create a base
+uv run poly create base --name my_base
+
+# create a component
+uv run poly create component --name my_component
+```
