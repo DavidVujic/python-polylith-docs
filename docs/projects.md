@@ -53,6 +53,10 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.hooks.polylith-bricks]
 # this section is needed to enable the hook in the build process, even if empty.
+
+# This section is needed for building
+[tool.hatch.build.targets.wheel]
+packages = ["<the polylith top namespace here>"]
 ```
 
 Polylith bricks are added in the `[tool.polylith.bricks]` section:
@@ -128,6 +132,10 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.hooks.polylith-bricks]
 # this section is needed to enable the hook in the build process, even if empty.
+
+# This section is needed for building
+[tool.hatch.build.targets.wheel]
+packages = ["<the polylith top namespace here>"]
 ```
 
 Polylith bricks are added in the `[tool.polylith.bricks]` section:
@@ -178,6 +186,10 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.hooks.polylith-bricks]
 # this section is needed to enable the hook in the build process, even if empty.
+
+# This section is needed for building
+[tool.hatch.build.targets.wheel]
+packages = ["<the polylith top namespace here>"]
 ```
 
 Polylith bricks are added in the `[tool.polylith.bricks]` section:
