@@ -203,3 +203,42 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 
 The `bases` and `components` folders are located at the workspace root.
 The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
+
+
+## Maturin
+
+### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
+
+``` toml
+[project.optional-dependencies]
+tests = [
+    "polylith-cli",
+]
+```
+
+Make Maturin aware of the way Polylith organizes source code:
+``` toml
+[tool.maturin]
+dev-mode-dirs = ["components", "bases", "development", "."]
+```
+
+
+### The project-specific pyproject.toml file(s)
+Prepare the project top folder for building wheels and sdists, by include the top namespace.
+``` toml
+[tool.maturin]
+include = ["my_namespace/**/*"]
+```
+
+Polylith bricks are added in the `[tool.polylith.bricks]` section:
+
+``` toml
+[tool.polylith.bricks]
+"../../bases/my_namespace/my_base" = "my_namespace/my_base"
+"../../components/my_namespace/my_component" = "my_namespace/my_component"
+"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
+```
+
+The `bases` and `components` folders are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.

@@ -28,6 +28,12 @@ packages = ["<your top namespace here>"]
 includes = ["<your top namespace here>/"]
 ```
 
+#### Maturin
+``` toml
+[tool.maturin]
+include = ["<your top namespace here>/**/*"]
+```
+
 ## Packaging
 To collect the components and bases that are needed for a specific project, the tool introduces a _build_ step. 
 The tool will build a _wheel_ and an _sdist_ from the source code of a project.
@@ -67,6 +73,20 @@ rye build --wheel
 uv build --wheel projects/the_project
 ```
 
+#### Maturin
+``` shell
+cd projects/the_project
+
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly build setup
+
+maturin build
+
+poly build teardown
+```
+
 This command will create a project specific _dist_ folder containing a _wheel_ with all the needed bricks.
 
 ## Deploying
@@ -94,7 +114,7 @@ The `build-project` command, with a custom top namespace:
 poetry build-project --with-top-namespace my_custom_namespace
 ```
 
-#### Hatch, PDM, Rye and uv
+#### uv, Hatch, PDM, Rye and Maturin
 A custom top namespace is defined in the project-specific `pyproject.toml`:
 
 ``` toml

@@ -20,7 +20,7 @@ packages = [
 # insert the needed 3rd party libraries here
 ```
 
-## Hatch, PDM, Rye and uv
+## uv, Hatch, PDM, Rye and Maturin
 ``` toml
 [project]
 dependencies = [] # insert the needed 3rd party libraries here
@@ -76,7 +76,18 @@ rye build --sdist
 ``` shell
 cd path/to_project
 
-uvx --from build pyproject-build --installer uv
+uv build
+```
+
+### Maturin
+``` shell
+cd path/to_project
+
+poly build setup
+
+maturin build
+
+poly build teardown
 ```
 
 The output is a `wheel` and, more importantly, an `sdist` (a source distribution). It is essentially a _zip_ file containing all source code used in the project.

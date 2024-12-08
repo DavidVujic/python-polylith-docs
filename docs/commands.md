@@ -30,6 +30,15 @@ rye run poly create workspace --name my_example_namespace --theme loose
 uv run poly create workspace --name my_example_namespace --theme loose
 ```
 
+#### Maturin
+
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly create workspace --name my_example_namespace --theme loose
+```
+
 ### Options
 `--name` (required) the workspace name, that will be used as the single top namespace for all bricks. __Choose the name wisely.__
 Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
@@ -78,6 +87,14 @@ rye run poly create component --name my_example_component
 uv run poly create component --name my_example_component
 ```
 
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly create component --name my_example_component
+```
+
 ### Options
 `--name` (required) the name of the component.
 
@@ -110,6 +127,14 @@ rye run poly create base --name my_example_base
 #### uv
 ``` shell
 uv run poly create base --name my_example_base
+```
+
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly create base --name my_example_base
 ```
 
 ### Options
@@ -146,6 +171,14 @@ rye run poly create project --name my_example_project
 uv run poly create project --name my_example_project
 ```
 
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly create project --name my_example_project
+```
+
 ### Options
 `--name` (required) the name of the project.
 
@@ -180,11 +213,26 @@ rye run poly info
 uv run poly info
 ```
 
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly info
+```
+
 ### Options
 `--short` Display a view that is better adjusted to Workspaces with many projects.
 
 ## Diff
-Shows what has changed since the most recent stable point in time:
+Shows what has changed since the most recent stable point in time.
+
+The `diff` command will compare the current state of the repository, compared to a `git tag`.
+The tool will look for the latest tag according to a certain pattern, such as `stable-*`.
+The pattern can be configured in the Workspace [configuration](configuration.md).
+
+The `diff` command is useful in a CI environment, to determine if a project should be deployed or not.
+It is also useful when running tests for changed bricks only.
 
 #### Poetry
 ``` shell
@@ -211,37 +259,12 @@ rye run poly diff
 uv run poly diff
 ```
 
-The `diff` command will compare the current state of the repository, compared to a `git tag`.
-The tool will look for the latest tag according to a certain pattern, such as `stable-*`.
-The pattern can be configured in the Workspace [configuration](configuration.md).
-
-The `diff` command is useful in a CI environment, to determine if a project should be deployed or not.
-It is also useful when running tests for changed bricks only.
-
-Example:
-#### Poetry
+#### Maturin
 ``` shell
-poetry poly diff --since release
-```
+# if not already activated a virtual environment
+source .venv/bin/activate
 
-#### Hatch
-``` shell
-hatch run poly diff --since release
-```
-
-#### PDM
-``` shell
-pdm run poly diff --since release
-```
-
-#### Rye
-``` shell
-rye run poly diff --since release
-```
-
-#### Rye
-``` shell
-uv run poly diff --since release
+poly diff
 ```
 
 ### Options
@@ -287,6 +310,14 @@ rye run poly libs
 #### uv
 ``` shell
 uv run poly libs
+```
+
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly libs
 ```
 
 ### Options
@@ -337,6 +368,14 @@ rye run poly check
 uv run poly check
 ```
 
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly check
+```
+
 ### Options
 `--directory`
 Show info about libraries used in a specific project.
@@ -383,6 +422,14 @@ rye run poly sync
 uv run poly sync
 ```
 
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly sync
+```
+
 This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.
 
 - projects: will add missing bricks to the project specific _pyproject.toml_, when imported by any of the already added bricks.
@@ -419,6 +466,14 @@ rye run poly deps
 #### uv
 ``` shell
 uv run poly deps
+```
+
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly deps
 ```
 
 ### Options
@@ -539,4 +594,31 @@ or run the test, filtered by pytest markers
 
 ``` shell
 uv run pytest -m <<< echo "$query"
+```
+
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+```
+
+``` shell
+# store the comma-separated list of bricks in a bash variable
+changes="$(poly diff --bricks --short)"
+
+# transform it into a pytest query,
+# i.e. from "hello,world,something" to "hello or world or something"
+query="${changes//,/ or }"
+```
+
+Run the test, filtered by keyword expression
+
+``` shell
+pytest -k <<< echo "$query"
+```
+
+or run the test, filtered by pytest markers
+
+``` shell
+pytest -m <<< echo "$query"
 ```

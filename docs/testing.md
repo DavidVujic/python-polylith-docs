@@ -35,6 +35,14 @@ rye run poly create component --name parser
 uv run poly create component --name parser
 ```
 
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly create component --name parser
+```
+
 A corresponding unit test will also be created in the `test` folder:
 ``` python
 from my_top_namespace.parser import core
@@ -72,6 +80,14 @@ rye run pytest
 #### uv
 ``` shell
 uv run pytest
+```
+
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+pytest
 ```
 
 #### Running tests with pytest and the TDD Theme
@@ -119,6 +135,14 @@ changes="$(rye run poly diff --bricks --short)"
 #### uv
 ``` shell
 changes="$(uv run poly diff --bricks --short)"
+```
+
+#### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+changes="$(poly diff --bricks --short)"
 ```
 
 To include bricks that use any of the changed bricks, you can add the `--deps` option.
@@ -169,6 +193,13 @@ rye run pytest -k <<< echo "$query"
 query="${changes//,/ or }"
 
 uv run pytest -k <<< echo "$query"
+```
+
+#### Maturin
+``` shell
+query="${changes//,/ or }"
+
+pytest -k <<< echo "$query"
 ```
 
 ## Manually testing and running services
