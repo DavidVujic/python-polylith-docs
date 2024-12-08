@@ -218,11 +218,45 @@ Finally, remove the `src` boilerplate code that was added by uv in the first ste
 rm -r src
 ```
 
+### Maturin
+Add the `polylith-cli` as a development dependency to your `pyproject.toml` file:
+
+``` toml
+[project.optional-dependencies]
+tests = [
+    "polylith-cli",
+]
+```
+
+``` shell
+python -m venv .venv
+pip install
+
+source .venv/bin/activate
+```
+
+#### Create the Polylith Workspace
+Create a workspace, with a basic Polylith folder structure.
+
+``` shell
+poly create workspace --name my_namespace --theme loose
+```
+
+#### Edit the configuration
+Make Maturin aware of the way Polylith organizes source code by adding this to the `pyproject.toml`:
+``` toml
+[tool.maturin]
+include = ["bases", "components"]
+```
+
+`--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
+__Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
+
+`--theme` the structure of the workspace, `loose` is the recommended structure for Python.
 
 ### Pantsbuild (aka Pants)
 Have a look in the Pants-specific [example repository](examples.md) for details on the setup.
 You will find examples of combining Pants with Polylith, by using the Hatch build backend in the project-specific configurations.
-
 
 ## Next steps
 You now have the repo structured as a Polylith Workspace. Great!

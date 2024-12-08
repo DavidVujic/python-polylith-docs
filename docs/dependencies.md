@@ -51,3 +51,11 @@ rye run poly check --directory projects/my-project
 ``` shell
 uv run poly check --directory projects/my-project
 ```
+
+### Maturin
+``` shell
+# if not already activated a virtual environment
+source .venv/bin/activate
+
+poly check --directory projects/my-project
+```
