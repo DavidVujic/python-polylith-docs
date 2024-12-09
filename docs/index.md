@@ -3,6 +3,11 @@
 > :material-information: For a more visual quickstart, check out the short videos in the [Videos & tutorials](videos.md) section.
 
 Polylith is an architecture, with tooling support, originally built for Clojure. This project brings __Polylith to Python__.
+Polylith is using a components-first architecture.
+You can think of it as building blocks, very much like LEGO bricks.
+
+All code lives in a Monorepo, available for reuse.
+Python code - the bricks - is separated from the infrastructure and the actual building of artifacts.
 
 From the [official Polylith Architecture docs](https://polylith.gitbook.io/polylith/):
 
@@ -29,24 +34,19 @@ This type of Architecture will also let you postpone design decisions, like goin
 Your team can instead choose to focus on writing code and creating features. Make the decisions on how to deploy when you are ready for it.
 
 ## Well suited for Monorepos
-Polylith is using a components-first architecture. You can think of it as building blocks, very much like LEGO bricks.
-All code lives in a Monorepo, available for reuse. Python code - _the bricks_ - is separated from the infrastructure and the actual building of artifacts.
-
-This may sound complicated, but it isn't.
-
-![polylith bricks](img/polylith-and-bricks.png)
-
-In short, Polylith is about:
+Polylith is about:
 
 - Viewing code as bricks that can be combined into features
 - Making it easy to reuse code across apps, tools, serverless functions and services
 - Keeping it simple
 
+![polylith bricks](img/polylith-and-bricks.png)
+
 ## Polylith for Python?
 The __Python tools for the Polylith Architecture__ is available as two options:
 
 - A __Poetry__ plugin. The plugin will add Polylith specific features to Poetry.
-- A standalone CLI supporting __Hatch__, __PDM__, __Rye__, __Pantsbuild__ and __uv__ (and Poetry).
+- A standalone CLI supporting __uv__, __Hatch__, __PDM__, __Rye__, __Pantsbuild__ and __Maturin__ (and Poetry).
 
 ### Use cases
 
