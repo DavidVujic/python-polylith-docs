@@ -212,7 +212,7 @@ Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
 
 ``` toml
 [project.optional-dependencies]
-tests = [
+dev = [
     "polylith-cli",
 ]
 ```

@@ -223,7 +223,7 @@ Add the `polylith-cli` as a development dependency to your `pyproject.toml` file
 
 ``` toml
 [project.optional-dependencies]
-tests = [
+dev = [
     "polylith-cli",
 ]
 ```
@@ -246,7 +246,7 @@ poly create workspace --name my_namespace --theme loose
 Make Maturin aware of the way Polylith organizes source code by adding this to the `pyproject.toml`:
 ``` toml
 [tool.maturin]
-include = ["bases", "components"]
+include = ["bases", "components", "development", "."]
 ```
 
 `--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
