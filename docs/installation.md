@@ -16,7 +16,7 @@ poetry self add poetry-polylith-plugin
 
 Done!
 
-## uv, Hatch, PDM, Rye, Pantsbuild and Maturin
+## uv, Hatch, PDM, Rye, Pantsbuild, Maturin and Pixi
 
 No globally added tools needed. Add the project-specific dependencies (see the [Setup](setup.md) and [Projects & pyproject.toml](projects.md) section),
 and the build hook plugins to add support for the Polylith structure and when packaging libraries.
