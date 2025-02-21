@@ -10,6 +10,7 @@ Here are some examples of how to setup __Python__ with the Polylith Architecture
     - [for Rye](https://github.com/DavidVujic/python-polylith-example-rye)
     - [for Pants](https://github.com/DavidVujic/python-polylith-example-pants)
     - [for uv](https://github.com/DavidVujic/python-polylith-example-uv)
+    - [for Pixi](https://github.com/FloLangenfeld/python-polylith-example-with-pixi) by Florent Lagenfeld
 - [Python Polylith Microservices Example](https://github.com/ttamg/python-polylith-microservices-example) by Matt Gosden
 - [Aws CDK App with Polylith](https://github.com/ybenitezf/cdk_polylith) by Yoel Benítez Fonseca
 
