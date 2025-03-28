@@ -2,18 +2,15 @@
 
 > :material-information: For a more visual quickstart, check out the short videos in the [Videos & tutorials](videos.md) section.
 
+__The main use case__ is to support having one or more microservices (or apps) in a Monorepo, and share code between the services.
+
 Polylith is an architecture, with tooling support, originally built for Clojure. This project brings __Polylith to Python__.
 Polylith is using a components-first architecture.
 You can think of it as building blocks, very much like LEGO bricks.
-
 All code lives in a Monorepo, available for reuse.
-Python code - the bricks - is separated from the infrastructure and the actual building of artifacts.
+Python code - the bricks - is separated from the infrastructure and the actual packaging or building of the deployable artifacts.
 
-From the [official Polylith Architecture docs](https://polylith.gitbook.io/polylith/):
-
->... Polylith is a software architecture that applies functional thinking at the system scale. It helps us build simple, maintainable, testable, and scalable backend systems. ...
-
-## What problems does Polylith solve?
+## What problems does the Polylith Architecture solve?
 Polylith offers a solution to the Microservice vs Monolith tradeoffs. Microservices are great,
 but the standard kind of setup will probably introduce a new set of problems:
 
@@ -24,20 +21,20 @@ but the standard kind of setup will probably introduce a new set of problems:
 
 Phew, that's a lot to maintain.
 
-Polylith addresses these types of issues, with simplistic solutions.
+Polylith addresses these types of issues, with simple solutions.
 In addition to that, Polylith is very much about the Developer Experience.
 It has support for REPL Driven Development - a workflow that makes coding both joyful and interactive.
 
 > If you can improve just one thing in your software development, make it getting faster feedback. [^1]
 
-This type of Architecture will also let you postpone design decisions, like going for a Monolith or REST Microservices or Serverless functions.
+This type of Architecture will also let you postpone design decisions if you like, such as going for a Monolith or REST Microservices or Serverless functions.
 Your team can instead choose to focus on writing code and creating features. Make the decisions on how to deploy when you are ready for it.
 
 ## Well suited for Monorepos
 Polylith is about:
 
-- Viewing code as bricks that can be combined into features
-- Making it easy to reuse code across apps, tools, serverless functions and services
+- code as small composable bricks that you combine into features
+- Making it easy to share code across apps, tools, serverless functions and services
 - Keeping it simple
 
 ![polylith bricks](img/polylith-and-bricks.png)
@@ -83,7 +80,8 @@ Where does the idea of bricks fit in here? Well, a brick is a Python namespace p
 
 > Namespaces are one honking great idea -- let's do more of those! [^2]
 
-If you want to dig a bit deeper, you will find a lot more information about the Polylith Architecture in general from the [official docs](https://polylith.gitbook.io/polylith/).
+If you want to dig a bit deeper, you will find a lot more information about the Polylith Architecture in general from the [Polylith Architecture docs](https://polylith.gitbook.io/polylith/):
+>... Polylith is a software architecture that applies functional thinking at the system scale. It helps us build simple, maintainable, testable, and scalable backend systems. ...
 
 [^1]: Dave Farley [on twitter](https://twitter.com/davefarley77/status/1560724029924786177?s=12&t=KxEN15qtnJODJUzkmclzmw)
 [^2]: From the Zen of Python
