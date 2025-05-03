@@ -489,6 +489,7 @@ Polylith doesn't have its own test runner. Use your favorite testing tool, such 
 ### Running tests
 See the [testing](testing.md) section for examples on how to run __pytest__ for changed bricks only.
 
+### Test diff
 With the `poly test` command, You can identify the bricks and projects that are _affected_ by changes in tests.
 The `poly test` command is used with a sub-command: __poly test diff__.
 It will show you any affected bricks or projects a test is modified.
