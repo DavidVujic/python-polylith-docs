@@ -486,7 +486,10 @@ A detailed view for a single brick and the dependent bricks: used by, and uses.
 ## Test
 Polylith doesn't have its own test runner. Use your favorite testing tool, such as `pytest`.
 
-With this command, You can identify the bricks and projects that are _affected_ by changes in tests.
+### Running tests
+See the [testing](testing.md) section for examples on how to run __pytest__ for changed bricks only.
+
+With the `poly test` command, You can identify the bricks and projects that are _affected_ by changes in tests.
 The `poly test` command is used with a sub-command: __poly test diff__.
 It will show you any affected bricks or projects a test is modified.
 
@@ -536,7 +539,3 @@ poly test diff
 `--since` Useful for displaying changes since a `stable` or `release` tag.
 The tag patterns are defined in the Workspace [configuration](configuration.md).
 This option also support using a specific commit hash.
-
-
-## Running tests
-See the [testing](testing.md) section for examples on how to run __pytest__ for changed bricks only.
