@@ -8,41 +8,7 @@ This [is optional and can be turned off](configuration.md) in the Workspace conf
 The tests are added in a `test` folder at the root of the workspace with the same kind of folder structure as the bricks.
 
 ### Example
-Creating a new `parser` component. This will add a new brick to the `components` folder.
-
-#### Poetry
-``` shell
-poetry poly create component --name parser
-```
-
-#### Hatch
-``` shell
-hatch run poly create component --name parser
-```
-
-#### PDM
-``` shell
-pdm run poly create component --name parser
-```
-
-#### Rye
-``` shell
-rye run poly create component --name parser
-```
-
-#### uv
-``` shell
-uv run poly create component --name parser
-```
-
-#### Maturin
-``` shell
-# if not already activated a virtual environment
-source .venv/bin/activate
-
-poly create component --name parser
-```
-
+Creating a new `parser` component using `poly create component`. This will add a new brick.
 A corresponding unit test will also be created in the `test` folder:
 ``` python
 from my_top_namespace.parser import core
@@ -103,8 +69,8 @@ addopts = [
 ```
 
 ### Running tests for changed code
-The __Python tools__ for the Polylith Architecture doesn't (yet) have a specific `test` command.
-You can use `poly diff` and your favorite test runner to only run the corresponding tests for changed code.
+You can use `poly diff` in combination with your favorite test runner,
+to only run the corresponding tests for changed code.
 
 The `diff` command has support for displaying the changed bricks by using `--bricks`.
 Append the `--short` option for a scripting-friendly output.

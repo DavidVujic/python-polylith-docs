@@ -483,142 +483,60 @@ Show brick depencencies for a specific project.
 `--brick`
 A detailed view for a single brick and the dependent bricks: used by, and uses.
 
-## Testing
-Example, how to run __pytest__ for changed bricks only.
+## Test
+Polylith doesn't have its own test runner. Use your favorite testing tool, such as `pytest`.
+
+### Running tests
+See the [testing](testing.md) section for examples on how to run __pytest__ for changed bricks only.
+
+### Test diff
+With the `poly test` command, You can identify the bricks and projects that are _affected_ by changes in tests.
+The `poly test` command is used with a sub-command: __poly test diff__.
+It will show you any affected bricks or projects a test is modified.
+
+Tests are expected to live in a test folder at the Workspace root when using the recommended __loose__ theme.
+For users of the __tdd__ theme, the tests are expected to be found in the brick test folder.
 
 #### Poetry
 ``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(poetry poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-poetry run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-poetry run pytest -m <<< echo "$query"
+poetry poly test diff
 ```
 
 #### Hatch
 ``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(hatch run poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-hatch run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-hatch run pytest -m <<< echo "$query"
+hatch run poly test diff
 ```
 
 #### PDM
 ``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(pdm run poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-pdm run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-pdm run pytest -m <<< echo "$query"
+pdm run poly test diff
 ```
 
 #### Rye
 ``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(rye run poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-rye run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-rye run pytest -m <<< echo "$query"
+rye run poly test diff
 ```
 
 #### uv
 ``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(uv run poly diff --bricks --short)"
-
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
-
-Run the test, filtered by keyword expression
-
-``` shell
-uv run pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-uv run pytest -m <<< echo "$query"
+uv run poly test diff
 ```
 
 #### Maturin
 ``` shell
 # if not already activated a virtual environment
 source .venv/bin/activate
+
+poly test diff
 ```
 
-``` shell
-# store the comma-separated list of bricks in a bash variable
-changes="$(poly diff --bricks --short)"
+### Options
+`--short` Useful for determining what projects has been affected by the changes in CI.
 
-# transform it into a pytest query,
-# i.e. from "hello,world,something" to "hello or world or something"
-query="${changes//,/ or }"
-```
+`--bricks` Useful for displaying affected bricks only. It will print a comma-separated list of bricks when using it with the `--short` option.
 
-Run the test, filtered by keyword expression
+`--projects` Useful for displaying affected projects only. It will print a comma-separated list of projects when using it with the `--short` option.
 
-``` shell
-pytest -k <<< echo "$query"
-```
-
-or run the test, filtered by pytest markers
-
-``` shell
-pytest -m <<< echo "$query"
-```
+`--since` Useful for displaying changes since a `stable` or `release` tag.
+The tag patterns are defined in the Workspace [configuration](configuration.md).
+This option also support using a specific commit hash.
