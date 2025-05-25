@@ -18,6 +18,7 @@ nav:
     - "Examples & Production Systems": examples.md
     - "Videos & tutorials": videos.md
     - "Configuring your Python IDE": ide.md
+    - "Tips & Tricks": tips.md
     - "About this Open Source Project": about.md
 
 theme:
