@@ -1,4 +1,4 @@
-# Tips and Tricks
+# Tips & Tricks
 
 ## TYPE_CHECKING
 
