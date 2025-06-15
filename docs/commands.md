@@ -69,7 +69,7 @@ test/
 
 #### tdd
 This theme will set the structure according to the original Clojure implementation. It is the standard in the Clojure community.
-Because of poor tooling support in __Python__ - such as when using __MyPy__ - the _loose_ theme is the recommended theme here.
+Because of poor tooling support in __Python__ - such as when using __MyPy__ - the _tdd_ theme is not recommended.
 
 ##### Example structure for the tdd theme
 
