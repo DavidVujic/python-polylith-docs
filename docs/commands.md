@@ -49,11 +49,42 @@ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) fo
 Themes are an exclusive Python Polylith feature, and defines what kind of workspace structure to use.
 
 #### loose (recommended)
-A theme to use for a more familiar structure for Python: _components/namespace/package_ and will put a _test_ folder at the root of the repository.
+A theme to use for a more familiar structure for Python, and will also put the _test_ folder at the root of the repository.
+It is the recommended theme for Python, and works really well with the existing Python dev tools out there.
+
+##### Example structure for the loose theme
+
+``` shell
+components/
+    your_namespace/
+        the_component/
+            core.py
+
+test/
+    components/
+        your_namespace/
+            the_component/
+                test_core.py
+```
 
 #### tdd
-The default and will set the structure according to the original Polylith Clojure implementation, such as:
-_components/package/src/namespace/package_ with a corresponding _test_ folder.
+This theme will set the structure according to the original Clojure implementation. It is the standard in the Clojure community.
+Because of poor tooling support in __Python__ - such as when using __MyPy__ - the _loose_ theme is the recommended theme here.
+
+##### Example structure for the tdd theme
+
+``` shell
+components/
+    the_component/
+        src/
+            your_namespace/
+                the_component/
+                    core.py
+        test/
+            your_namespace/
+                the_component/
+                    test_core.py
+```
 
 #### What's the deal with the .keep files?
 When creating a new workspace, the Polylith tool will add `.keep` files in the newly created folders.
