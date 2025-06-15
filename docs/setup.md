@@ -192,8 +192,8 @@ __Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep
 
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
 
-#### Edit the configuration
-Make sure that the build backend for uv is set to Hatch.
+#### Edit the project configuration
+Make sure that the build backend for `uv` is set to Hatch, having this section in the `pyproject.toml`:
 
 ``` toml
 [build-system]
@@ -201,7 +201,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-Make uv (and Hatch) aware of the way Polylith organizes source code:
+Make `uv` aware of the way Polylith organizes source code:
 ``` toml
 [tool.hatch.build]
 dev-mode-dirs = ["components", "bases", "development", "."]
@@ -213,10 +213,6 @@ Run the `sync` command to update the virtual environment:
 uv sync
 ```
 
-Finally, remove the `src` boilerplate code that was added by uv in the first step:
-``` shell
-rm -r src
-```
 
 ### Maturin
 Add the `polylith-cli` as a development dependency to your `pyproject.toml` file:
