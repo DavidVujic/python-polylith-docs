@@ -68,6 +68,46 @@ addopts = [
 ]
 ```
 
+##### uv and the TDD Theme
+The way Python paths are resolved sometimes differ between the Package & Dependency management tools
+out there. For `uv` you might need to configure `pytest` to find the __TDD Theme__ specific paths.
+__NOTE__: this is not needed for the recommended _loose_ theme.
+
+``` python
+# running pytest with uv and the TDD theme
+
+# conftest.py
+
+import sys
+from pathlib import Path
+
+
+def pytest_configure(config):
+    bases = Path.cwd().glob("bases/**/**/src")
+    components = Path.cwd().glob("components/**/**/src")
+
+    paths = list(bases) + list(components)
+
+    for path in paths:
+        sys.path.insert(0, path.as_posix())
+```
+
+### Running doctests
+`pytest` has a relatively new feature called _consider_namespace_packages_.
+This feature is useful when running _doctests_.
+
+Suggested `pytest` configuration to run the regular tests and also doctests:
+
+``` toml
+[tool.pytest.ini_options]
+addopts = [
+ "--import-mode=importlib",
+  "--doctest-modules",
+]
+consider_namespace_packages = true
+```
+
+
 ### Running tests for changed code
 You can use `poly diff` in combination with your favorite test runner,
 to only run the corresponding tests for changed code.
