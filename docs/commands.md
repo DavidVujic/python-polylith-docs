@@ -255,6 +255,8 @@ poly info
 ### Options
 `--short` Display a view that is better adjusted to Workspaces with many projects.
 
+`--save` Store the contents of this command to file.
+
 ## Diff
 Shows what has changed since the most recent stable point in time.
 
@@ -367,6 +369,7 @@ The poly libs command will likely report the "cv2" as a missing dependency.
 
 Using `--alias opencv-python=cv2` will make the command treat the alias as a third-party import.
 
+`--save` Store the contents of this command to file.
 
 ## Check
 Validates the Polylith workspace, checking for any missing dependencies (bricks and third-party libraries):
@@ -513,6 +516,8 @@ Show brick depencencies for a specific project.
 
 `--brick`
 A detailed view for a single brick and the dependent bricks: used by, and uses.
+
+`--save` Store the contents of this command to file.
 
 ## Test
 Polylith doesn't have its own test runner. Use your favorite testing tool, such as `pytest`.
