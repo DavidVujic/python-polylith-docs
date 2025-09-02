@@ -52,3 +52,23 @@ When `brick_docs_enabeld = true`, a README is added when creating a component or
 
 ### Testing
 The create component and brick [commands](commands.md) will also create corresponding unit tests when `enabled = true` in the test section of the workspace configuration.
+
+
+### Custom command output path
+The `poly info`, `poly deps` and `poly libs` commands have support for a `--save` option.
+By default, the command output will be saved to `development/poly/<the command>.txt`.
+But you can configure it, if you want to store the output in a different location.
+
+Example configuration:
+
+``` toml
+[tool.polylith.commands]
+output = "somewhere/else"
+```
+
+Or, configure output location by command:
+
+``` toml
+[tool.polylith.commands.deps]
+output = "somewhere/else"
+```
