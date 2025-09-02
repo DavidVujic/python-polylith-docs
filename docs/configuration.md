@@ -55,7 +55,7 @@ The create component and brick [commands](commands.md) will also create correspo
 
 
 ### Custom command output path
-The `poly info`, `poly deps` and `poly libs` have support for a `--save` option.
+The `poly info`, `poly deps` and `poly libs` commands have support for a `--save` option.
 By default, the command output will be saved to `development/poly/<the command>.txt`.
 But you can configure it, if you want to store the output in a different location.
 
