@@ -73,6 +73,10 @@ rye build --wheel
 uv build --wheel projects/the_project
 ```
 
+_Are you using the `uv` build backend (and not the recommended `hatch` build backend)?_
+_If so, you need to run the `poly build setup` and `poly build teardown` commands before and after the `uv build` command._
+_This is needed because of the missing build hook support of the uv build backend._
+
 #### Maturin
 ``` shell
 cd projects/the_project

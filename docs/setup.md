@@ -193,7 +193,8 @@ __Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
 
 #### Edit the project configuration
-Make sure that the build backend for `uv` is set to Hatch, having this section in the `pyproject.toml`:
+The recommended build backend for `uv` is Hatch. This is because of the very useful build hook support.
+Make sure to add this section, if not already added, in the `pyproject.toml`:
 
 ``` toml
 [build-system]
@@ -213,6 +214,17 @@ Run the `sync` command to update the virtual environment:
 uv sync
 ```
 
+##### What about the uv Build Backend?
+You can use the `uv` build backend with Polylith, even if the `hatch` backend is the recommended one.
+
+Add this configuration, to make `uv` aware of namespace packages and the top namespace.
+
+``` toml
+[tool.uv.build-backend]
+namespace = true
+module-name = "<the polylith top namespace here>"
+module-root = ""
+```
 
 ### Maturin
 Add the `polylith-cli` as a development dependency to your `pyproject.toml` file:
