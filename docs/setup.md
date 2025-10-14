@@ -181,6 +181,8 @@ uv add polylith-cli --dev
 uv sync  # create a virtual environment and lock files
 ```
 
+> :material-information: as an alternative to adding a dev dependency, it is also possible to use uvx (example usage: `uvx --from polylith-cli poly info`).
+
 Create a workspace, with a basic Polylith folder structure.
 
 ``` shell
