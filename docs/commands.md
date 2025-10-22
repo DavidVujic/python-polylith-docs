@@ -30,6 +30,11 @@ rye run poly create workspace --name my_example_namespace --theme loose
 uv run poly create workspace --name my_example_namespace --theme loose
 ```
 
+#### Pixi
+``` shell
+pixi run poly create workspace --name my_example_namespace --theme loose
+```
+
 #### Maturin
 
 ``` shell
@@ -118,6 +123,11 @@ rye run poly create component --name my_example_component
 uv run poly create component --name my_example_component
 ```
 
+#### Pixi
+``` shell
+pixi run poly create component --name my_example_component
+```
+
 #### Maturin
 ``` shell
 # if not already activated a virtual environment
@@ -158,6 +168,11 @@ rye run poly create base --name my_example_base
 #### uv
 ``` shell
 uv run poly create base --name my_example_base
+```
+
+#### Pixi
+``` shell
+pixi run poly create base --name my_example_base
 ```
 
 #### Maturin
@@ -202,6 +217,11 @@ rye run poly create project --name my_example_project
 uv run poly create project --name my_example_project
 ```
 
+#### Pixi
+``` shell
+pixi run poly create project --name my_example_project
+```
+
 #### Maturin
 ``` shell
 # if not already activated a virtual environment
@@ -242,6 +262,11 @@ rye run poly info
 #### uv
 ``` shell
 uv run poly info
+```
+
+#### Pixi
+``` shell
+pixi run poly info
 ```
 
 #### Maturin
@@ -290,6 +315,11 @@ rye run poly diff
 #### uv
 ``` shell
 uv run poly diff
+```
+
+#### Pixi
+``` shell
+pixi run poly diff
 ```
 
 #### Maturin
@@ -343,6 +373,11 @@ rye run poly libs
 #### uv
 ``` shell
 uv run poly libs
+```
+
+#### Pixi
+``` shell
+pixi run poly libs
 ```
 
 #### Maturin
@@ -402,6 +437,11 @@ rye run poly check
 uv run poly check
 ```
 
+#### Pixi
+``` shell
+pixi run poly check
+```
+
 #### Maturin
 ``` shell
 # if not already activated a virtual environment
@@ -456,6 +496,11 @@ rye run poly sync
 uv run poly sync
 ```
 
+#### Pixi
+``` shell
+pixi run poly sync
+```
+
 #### Maturin
 ``` shell
 # if not already activated a virtual environment
@@ -500,6 +545,11 @@ rye run poly deps
 #### uv
 ``` shell
 uv run poly deps
+```
+
+#### Pixi
+``` shell
+pixi run poly deps
 ```
 
 #### Maturin
@@ -556,6 +606,11 @@ rye run poly test diff
 #### uv
 ``` shell
 uv run poly test diff
+```
+
+#### Pixi
+``` shell
+pixi run poly test diff
 ```
 
 #### Maturin
