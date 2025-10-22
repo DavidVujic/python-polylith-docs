@@ -6,7 +6,7 @@ Packaging and deploying Polylith projects is done by using the Poetry Multiproje
 The `poetry build-project` command will make it possible to use relative package includes as how components and bases are added to Python Polylith projects. 
 Relative includes are currently not possible by default in __Poetry__, that is where the __Multiproject__ plugin comes in.
 
-## Hatch, PDM, Rye and uv
+## Hatch, PDM, Rye, Pixi and uv
 Hatch, PDM, Rye and uv support relative includes via the `[tool.poetry.bricks]` configuration.
 Nothing extra needed other than the build hooks.
 
@@ -16,7 +16,7 @@ you will need to add the path in the project-specific `pyroject.toml`.
 
 If you only provide `wheel` distributions, this is optional.
 
-#### Hatch, Rye and uv
+#### Hatch, Rye, Pixi and uv
 ```toml
 [tool.hatch.build.targets.wheel]
 packages = ["<your top namespace here>"]
@@ -76,6 +76,17 @@ uv build --wheel projects/the_project
 _Are you using the `uv` build backend (and not the recommended `hatch` build backend)?_
 _If so, you need to run the `poly build setup` and `poly build teardown` commands before and after the `uv build` command._
 _This is needed because of the missing build hook support of the uv build backend._
+
+#### Pixi
+``` shell
+cd projects/the_project
+
+pixi run poly build setup
+
+pixi build
+
+pixi run poly build teardown
+```
 
 #### Maturin
 ``` shell

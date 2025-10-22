@@ -265,8 +265,9 @@ __Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
 
 ### Pixi
-Have a look at the Hatch and Maturin sections for setup, packaging and usage. More details about Pixi setup coming soon!
-As of this writing, Pixi has experimental support for building and packaging. The Hatch-specific hooks is not (currently) needed for Pixi.
+Have a look at the Pixi docs for initializing a new repo or project.
+For the Polylith initial setup, look at the __Hatch__ sections at this page.
+
 
 ### Pantsbuild (aka Pants)
 Have a look in the Pants-specific [example repository](examples.md) for details on the setup.
