@@ -631,3 +631,43 @@ poly test diff
 `--since` Useful for displaying changes since a `stable` or `release` tag.
 The tag patterns are defined in the Workspace [configuration](configuration.md).
 This option also support using a specific commit hash.
+
+
+## Build
+This is a command for Package & Dependency management tools without support for hooks or plugins,
+such as __Maturin__, or when using the __uv build backend__. This command is not necessary for __uv__ users that use the _Hatch_ build backend.
+
+Usage: by running the setup and teardown sub-commands between the "build wheels" with your Package & Dependency Management tool.
+
+``` shell
+poly build setup
+
+uv build
+
+poly build teardown
+```
+
+The __setup__ command is for collecting the needed bricks in a project,
+and preparing the Python folder structure before building a distribution.
+
+The __teardown__ command is for restoring the repo: removing temporary directories.
+This functionality is already existing when using the Hatchling or PDM build backends together with
+the Polylith build hooks (as used by uv, hatch and pdm).
+
+Poetry uses the multiproject plugin to accomplish this, and this command is not applicable for Poetry users.
+
+
+## Env
+This is a command for Package & Dependency management tools without support for multiple module roots or hooks, such as the __uv build backend__.
+This command will add the bases and components paths to the current virtual environment.
+
+When these are added, navigation and auto complete will work as expected. Users of the uv build backend
+cannot set bases and components as module roots, or _dev mode dirs_ as it is called in the recommended hatch build backend.
+
+This command will ensure the virtual environment is in sync.
+
+``` shell
+uv sync
+
+uv run poly env setup
+```
