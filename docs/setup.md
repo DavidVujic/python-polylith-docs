@@ -228,6 +228,9 @@ module-name = "<the polylith top namespace here>"
 module-root = ""
 ```
 
+Also, have a look at the `poly env` command to make sure the "dev mode dirs", or _module roots_, are in sync with
+the current virtual environment.
+
 ### Maturin
 Add the `polylith-cli` as a development dependency to your `pyproject.toml` file:
 
