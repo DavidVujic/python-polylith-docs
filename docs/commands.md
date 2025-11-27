@@ -661,10 +661,10 @@ Poetry uses the multiproject plugin to accomplish this, and this command is not 
 This is a command for Package & Dependency management tools without support for multiple module roots or hooks, such as the __uv build backend__.
 This command will add the bases and components paths to the current virtual environment.
 
-When these are added, navigation and auto complete will work as expected. Users of uv that also use the uv build backend
-cannot set bases and components as module roots, or dev mode dirs as it is called in the recommended hatch build backend.
+When these are added, navigation and auto complete will work as expected. Users of the uv build backend
+cannot set bases and components as module roots, or _dev mode dirs_ as it is called in the recommended hatch build backend.
 
-The uv build backend has currently no support for multiple module roots or build hooks.
+This command will ensure the virtual environment is in sync.
 
 ``` shell
 uv sync
