@@ -1,0 +1,3905 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../setup/">
+      
+      
+        <link rel="next" href="../configuration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../img/polylith-48by48.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Commands - Python tools for the Polylith Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Python tools for the Polylith Architecture" class="md-header__button md-logo" aria-label="Python tools for the Polylith Architecture" data-md-component="logo">
+      
+  <img src="../img/polylith-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python tools for the Polylith Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DavidVujic/python-polylith" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DavidVujic/python-polylith
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Python tools for the Polylith Architecture" class="md-nav__button md-logo" aria-label="Python tools for the Polylith Architecture" data-md-component="logo">
+      
+  <img src="../img/polylith-logo.png" alt="logo">
+
+    </a>
+    Python tools for the Polylith Architecture
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DavidVujic/python-polylith" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DavidVujic/python-polylith
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's Polylith?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a workspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Themes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loose-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        loose (recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="loose (recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-structure-for-the-loose-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example structure for the loose theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tdd
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tdd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-structure-for-the-tdd-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example structure for the tdd theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-deal-with-the-keep-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the deal with the .keep files?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a component
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Libs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Libs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test diff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Env
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Polylith Workspace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependencies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects & pyproject.toml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging & deploying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrating to Polylith
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples & Production Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos & tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuring your Python IDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips & Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Open Source Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a workspace
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a workspace">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Themes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loose-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        loose (recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="loose (recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-structure-for-the-loose-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example structure for the loose theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tdd
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tdd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-structure-for-the-tdd-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example structure for the tdd theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whats-the-deal-with-the-keep-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's the deal with the .keep files?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a component
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a base
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a project
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Info">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#libs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Libs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Libs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Check">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test diff
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test diff">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#poetry_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Poetry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hatch_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pdm_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PDM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rye_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rye
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixi_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maturin_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maturin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Env
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="commands">Commands</h1>
+<p><img alt="poly info example" src="../img/poly-info.png" /></p>
+<h2 id="create-a-workspace">Create a workspace</h2>
+<p>This will create a Polylith workspace, with a basic Polylith folder structure.</p>
+<h4 id="poetry">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h4 id="hatch">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h4 id="pdm">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h4 id="rye">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h4 id="uv">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h4 id="pixi">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h4 id="maturin">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>poly<span class="w"> </span>create<span class="w"> </span>workspace<span class="w"> </span>--name<span class="w"> </span>my_example_namespace<span class="w"> </span>--theme<span class="w"> </span>loose
+</span></code></pre></div>
+<h3 id="options">Options</h3>
+<p><code>--name</code> (required) the workspace name, that will be used as the single top namespace for all bricks. <strong>Choose the name wisely.</strong>
+Have a look in <a href="https://peps.python.org/pep-0423/#respect-ownership">PEP-423</a> for naming guidelines.</p>
+<p><code>--theme</code> the structure of the workspace (see below).</p>
+<h3 id="themes">Themes</h3>
+<p>Themes are an exclusive Python Polylith feature, and defines what kind of workspace structure to use.</p>
+<h4 id="loose-recommended">loose (recommended)</h4>
+<p>A theme to use for a more familiar structure for Python, and will also put the <em>test</em> folder at the root of the repository.
+It is the recommended theme for Python, and works really well with the existing Python dev tools out there.</p>
+<h5 id="example-structure-for-the-loose-theme">Example structure for the loose theme</h5>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>components/
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span>your_namespace/
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span>the_component/
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">            </span>core.py
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>test/
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span>components/
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span>your_namespace/
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">            </span>the_component/
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                </span>test_core.py
+</span></code></pre></div>
+<h4 id="tdd">tdd</h4>
+<p>This theme will set the structure according to the original Clojure implementation. It is the standard in the Clojure community.
+Because of poor tooling support in <strong>Python</strong> - such as when using <strong>MyPy</strong> - the <em>tdd</em> theme is not recommended.</p>
+<h5 id="example-structure-for-the-tdd-theme">Example structure for the tdd theme</h5>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>components/
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>the_component/
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span>src/
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">            </span>your_namespace/
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">                </span>the_component/
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">                    </span>core.py
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span>test/
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">            </span>your_namespace/
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">                </span>the_component/
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">                    </span>test_core.py
+</span></code></pre></div>
+<h4 id="whats-the-deal-with-the-keep-files">What's the deal with the .keep files?</h4>
+<p>When creating a new workspace, the Polylith tool will add <code>.keep</code> files in the newly created folders.
+These are added for any initial commits of the folder structure, and can safely be removed when adding source files.</p>
+<h2 id="create-a-component">Create a component</h2>
+<p>This command will create a component - i.e. a Python package in a namespaced folder.</p>
+<h4 id="poetry_1">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h4 id="hatch_1">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h4 id="pdm_1">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h4 id="rye_1">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h4 id="uv_1">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h4 id="pixi_1">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h4 id="maturin_1">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>poly<span class="w"> </span>create<span class="w"> </span>component<span class="w"> </span>--name<span class="w"> </span>my_example_component
+</span></code></pre></div>
+<h3 id="options_1">Options</h3>
+<p><code>--name</code> (required) the name of the component.</p>
+<p><code>--description</code> adding a docstring to the base.
+It will also be added in the README, when enabled in the configuration. See <a href="../configuration/">configuration</a>.</p>
+<h2 id="create-a-base">Create a base</h2>
+<p>This command will create a base - i.e. a Python package in a namespaced folder.</p>
+<h4 id="poetry_2">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h4 id="hatch_2">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h4 id="pdm_2">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h4 id="rye_2">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h4 id="uv_2">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h4 id="pixi_2">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h4 id="maturin_2">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>poly<span class="w"> </span>create<span class="w"> </span>base<span class="w"> </span>--name<span class="w"> </span>my_example_base
+</span></code></pre></div>
+<h3 id="options_2">Options</h3>
+<p><code>--name</code> (required) the name of the base.</p>
+<p><code>--description</code> adding a docstring to the base.
+It will also be added in the README, when enabled in the configuration. See <a href="../configuration/">configuration</a>.</p>
+<h2 id="create-a-project">Create a project</h2>
+<p>This command will create a project - i.e. a pyproject.toml in a project folder.</p>
+<h4 id="poetry_3">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h4 id="hatch_3">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h4 id="pdm_3">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h4 id="rye_3">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h4 id="uv_3">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h4 id="pixi_3">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h4 id="maturin_3">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>poly<span class="w"> </span>create<span class="w"> </span>project<span class="w"> </span>--name<span class="w"> </span>my_example_project
+</span></code></pre></div>
+<h3 id="options_3">Options</h3>
+<p><code>--name</code> (required) the name of the project.</p>
+<p><code>--description</code> adding a <em>pyproject.toml</em> description.</p>
+<h2 id="info">Info</h2>
+<p>Show info about the workspace:</p>
+<h4 id="poetry_4">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h4 id="hatch_4">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h4 id="pdm_4">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h4 id="rye_4">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h4 id="uv_4">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h4 id="pixi_4">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h4 id="maturin_4">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>poly<span class="w"> </span>info
+</span></code></pre></div>
+<h3 id="options_4">Options</h3>
+<p><code>--short</code> Display a view that is better adjusted to Workspaces with many projects.</p>
+<p><code>--save</code> Store the contents of this command to file.</p>
+<h2 id="diff">Diff</h2>
+<p>Shows what has changed since the most recent stable point in time.</p>
+<p>The <code>diff</code> command will compare the current state of the repository, compared to a <code>git tag</code>.
+The tool will look for the latest tag according to a certain pattern, such as <code>stable-*</code>.
+The pattern can be configured in the Workspace <a href="../configuration/">configuration</a>.</p>
+<p>The <code>diff</code> command is useful in a CI environment, to determine if a project should be deployed or not.
+It is also useful when running tests for changed bricks only.</p>
+<h4 id="poetry_5">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="hatch_5">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="pdm_5">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="rye_5">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="uv_5">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="pixi_5">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="maturin_5">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>poly<span class="w"> </span>diff
+</span></code></pre></div>
+<h3 id="options_5">Options</h3>
+<p><code>--short</code> Useful for determining what projects has been affected by the changes in CI.</p>
+<p><code>--bricks</code> Useful for displaying changed bricks only. It will print a comma-separated list of bricks when using it with the <code>--short</code> option.</p>
+<p><code>--since</code> Useful for displaying changes since a <code>stable</code> or <code>release</code> tag.
+The tag patterns are defined in the Workspace <a href="../configuration/">configuration</a>.
+This option also support using a specific commit hash.</p>
+<p><code>--deps</code> Useful for displaying the bricks that are used by the changed bricks. Use it with the <code>--bricks</code> option.</p>
+<h2 id="libs">Libs</h2>
+<p>Show info about the third-party libraries used in the workspace:</p>
+<h4 id="poetry_6">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<p>This feature relies on installed project dependencies, and expects a <code>poetry.lock</code> of a project to be present.
+If missing, there is a Poetry command available:
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>poetry<span class="w"> </span>lock<span class="w"> </span>--directory<span class="w"> </span>path/to-project
+</span></code></pre></div></p>
+<h4 id="hatch_6">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<h4 id="pdm_6">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<h4 id="rye_6">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<h4 id="uv_6">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<h4 id="pixi_6">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<h4 id="maturin_6">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>poly<span class="w"> </span>libs
+</span></code></pre></div>
+<h3 id="options_6">Options</h3>
+<p><code>--directory</code>
+Show info about libraries used in a specific project.</p>
+<p><code>--strict</code>
+A more narrow way of comparing third-party libraries and the actual imports.
+This is useful to rule out possible false positives.</p>
+<p><code>--alias</code>
+Useful when an import differ from the library name.</p>
+<p>Example: the library "opencv-python" and the actual import "cv2".
+The poly libs command will likely report the "cv2" as a missing dependency.</p>
+<p>Using <code>--alias opencv-python=cv2</code> will make the command treat the alias as a third-party import.</p>
+<p><code>--save</code> Store the contents of this command to file.</p>
+<h2 id="check">Check</h2>
+<p>Validates the Polylith workspace, checking for any missing dependencies (bricks and third-party libraries):</p>
+<h4 id="poetry_7">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>check
+</span></code></pre></div>
+<p>This feature is built on top of the <code>poly libs</code> command,
+and for expects a <code>poetry.lock</code> of a <code>Poetry</code> project to be present.</p>
+<h4 id="hatch_7">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>check
+</span></code></pre></div>
+<h4 id="pdm_7">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>check
+</span></code></pre></div>
+<h4 id="rye_7">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>check
+</span></code></pre></div>
+<h4 id="uv_7">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>check
+</span></code></pre></div>
+<h4 id="pixi_7">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>check
+</span></code></pre></div>
+<h4 id="maturin_7">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>poly<span class="w"> </span>check
+</span></code></pre></div>
+<h3 id="options_7">Options</h3>
+<p><code>--directory</code>
+Show info about libraries used in a specific project.</p>
+<p><code>--strict</code>
+A more narrow way of comparing third-party libraries, versions and the actual imports.
+This is useful to rule out possible false positives,
+and to ensure using the same version strings for the libraries across the workspace.</p>
+<p><code>--alias</code>
+Useful when an import differ from the library name.</p>
+<p>Example: the library "opencv-python" and the actual import "cv2".
+The poly check command will likely report the "cv2" as a missing dependency.</p>
+<p>Using <code>--alias opencv-python=cv2</code> will make the command treat the alias as a third-party import.</p>
+<h2 id="sync">Sync</h2>
+<p>Keep projects in sync with the actual usage of bricks in source code.</p>
+<h4 id="poetry_8">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<h4 id="hatch_8">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<h4 id="pdm_8">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<h4 id="rye_8">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<h4 id="uv_8">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<h4 id="pixi_8">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<h4 id="maturin_8">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>poly<span class="w"> </span>sync
+</span></code></pre></div>
+<p>This feature is useful for keeping projects in sync. The command will analyze code and add any missing bricks to the projects, including the development project.</p>
+<ul>
+<li>projects: will add missing bricks to the project specific <em>pyproject.toml</em>, when imported by any of the already added bricks.</li>
+<li>development: will add <strong>all</strong> missing bricks to the development <em>pyproject.toml</em>.</li>
+</ul>
+<h3 id="options_8">Options</h3>
+<p><code>--directory</code>
+Synchronize a specific project.</p>
+<h2 id="deps">Deps</h2>
+<p>Show dependencies between bricks.</p>
+<h4 id="poetry_9">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h4 id="hatch_9">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h4 id="pdm_9">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h4 id="rye_9">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h4 id="uv_9">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h4 id="pixi_9">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h4 id="maturin_9">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a>
+</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a>poly<span class="w"> </span>deps
+</span></code></pre></div>
+<h3 id="options_9">Options</h3>
+<p><code>--directory</code>
+Show brick depencencies for a specific project.</p>
+<p><code>--brick</code>
+A detailed view for a single brick and the dependent bricks: used by, and uses.</p>
+<p><code>--save</code> Store the contents of this command to file.</p>
+<h2 id="test">Test</h2>
+<p>Polylith doesn't have its own test runner. Use your favorite testing tool, such as <code>pytest</code>.</p>
+<h3 id="running-tests">Running tests</h3>
+<p>See the <a href="../testing/">testing</a> section for examples on how to run <strong>pytest</strong> for changed bricks only.</p>
+<h3 id="test-diff">Test diff</h3>
+<p>With the <code>poly test</code> command, You can identify the bricks and projects that are <em>affected</em> by changes in tests.
+The <code>poly test</code> command is used with a sub-command: <strong>poly test diff</strong>.
+It will show you any affected bricks or projects a test is modified.</p>
+<p>Tests are expected to live in a test folder at the Workspace root when using the recommended <strong>loose</strong> theme.
+For users of the <strong>tdd</strong> theme, the tests are expected to be found in the brick test folder.</p>
+<h4 id="poetry_10">Poetry</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>poetry<span class="w"> </span>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="hatch_10">Hatch</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>hatch<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="pdm_10">PDM</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>pdm<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="rye_10">Rye</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>rye<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="uv_10">uv</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="pixi_10">Pixi</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h4 id="maturin_10">Maturin</h4>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="c1"># if not already activated a virtual environment</span>
+</span><span id="__span-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</span><span id="__span-79-3"><a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a>
+</span><span id="__span-79-4"><a id="__codelineno-79-4" name="__codelineno-79-4" href="#__codelineno-79-4"></a>poly<span class="w"> </span><span class="nb">test</span><span class="w"> </span>diff
+</span></code></pre></div>
+<h3 id="options_10">Options</h3>
+<p><code>--short</code> Useful for determining what projects has been affected by the changes in CI.</p>
+<p><code>--bricks</code> Useful for displaying affected bricks only. It will print a comma-separated list of bricks when using it with the <code>--short</code> option.</p>
+<p><code>--projects</code> Useful for displaying affected projects only. It will print a comma-separated list of projects when using it with the <code>--short</code> option.</p>
+<p><code>--since</code> Useful for displaying changes since a <code>stable</code> or <code>release</code> tag.
+The tag patterns are defined in the Workspace <a href="../configuration/">configuration</a>.
+This option also support using a specific commit hash.</p>
+<h2 id="build">Build</h2>
+<p>This is a command for Package &amp; Dependency management tools without support for hooks or plugins,
+such as <strong>Maturin</strong>, or when using the <strong>uv build backend</strong>. This command is not necessary for <strong>uv</strong> users that use the <em>Hatch</em> build backend.</p>
+<p>Usage: by running the setup and teardown sub-commands between the "build wheels" with your Package &amp; Dependency Management tool.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>poly<span class="w"> </span>build<span class="w"> </span>setup
+</span><span id="__span-80-2"><a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>
+</span><span id="__span-80-3"><a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>uv<span class="w"> </span>build
+</span><span id="__span-80-4"><a id="__codelineno-80-4" name="__codelineno-80-4" href="#__codelineno-80-4"></a>
+</span><span id="__span-80-5"><a id="__codelineno-80-5" name="__codelineno-80-5" href="#__codelineno-80-5"></a>poly<span class="w"> </span>build<span class="w"> </span>teardown
+</span></code></pre></div>
+<p>The <strong>setup</strong> command is for collecting the needed bricks in a project,
+and preparing the Python folder structure before building a distribution.</p>
+<p>The <strong>teardown</strong> command is for restoring the repo: removing temporary directories.
+This functionality is already existing when using the Hatchling or PDM build backends together with
+the Polylith build hooks (as used by uv, hatch and pdm).</p>
+<p>Poetry uses the multiproject plugin to accomplish this, and this command is not applicable for Poetry users.</p>
+<h2 id="env">Env</h2>
+<p>This is a command for Package &amp; Dependency management tools without support for multiple module roots or hooks, such as the <strong>uv build backend</strong>.
+This command will add the bases and components paths to the current virtual environment.</p>
+<p>When these are added, navigation and auto complete will work as expected. Users of the uv build backend
+cannot set bases and components as module roots, or <em>dev mode dirs</em> as it is called in the recommended hatch build backend.</p>
+<p>This command will ensure the virtual environment is in sync.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>uv<span class="w"> </span>sync
+</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>
+</span><span id="__span-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>uv<span class="w"> </span>run<span class="w"> </span>poly<span class="w"> </span>env<span class="w"> </span>setup
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setup">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setup
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Configuration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/DavidVujic/python-polylith" target="_blank" rel="noopener" title="Python tools for the Polylith Architecture on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["search.highlight", "search.share", "navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
