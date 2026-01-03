@@ -33,7 +33,7 @@ Your team can instead choose to focus on writing code and creating features. Mak
 ## Well suited for Monorepos
 Polylith is about:
 
-- code as small composable bricks that you combine into features
+- Code as small composable bricks that you combine into features
 - Making it easy to share code across apps, tools, serverless functions and services
 - Keeping it simple
 
