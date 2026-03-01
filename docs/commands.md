@@ -3,7 +3,7 @@
 ![poly info example](img/poly-info.png)
 
 ## Create a workspace
-This will create a Polylith workspace, with a basic Polylith folder structure.
+This will create a Polylith workspace, with a basic Polylith directory structure.
 
 #### Poetry
 ``` shell
@@ -54,7 +54,7 @@ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) fo
 Themes are an exclusive Python Polylith feature, and defines what kind of workspace structure to use.
 
 #### loose (recommended)
-A theme to use for a more familiar structure for Python, and will also put the _test_ folder at the root of the repository.
+A theme to use for a more familiar structure for Python, and will also put the _test_ directory at the root of the repository.
 It is the recommended theme for Python, and works really well with the existing Python dev tools out there.
 
 ##### Example structure for the loose theme
@@ -92,11 +92,11 @@ components/
 ```
 
 #### What's the deal with the .keep files?
-When creating a new workspace, the Polylith tool will add `.keep` files in the newly created folders.
-These are added for any initial commits of the folder structure, and can safely be removed when adding source files.
+When creating a new workspace, the Polylith tool will add `.keep` files in the newly created directories.
+These are added for any initial commits of the directory structure, and can safely be removed when adding source files.
 
 ## Create a component
-This command will create a component - i.e. a Python package in a namespaced folder.
+This command will create a component - i.e. a Python namespace package.
 
 #### Poetry
 ``` shell
@@ -143,7 +143,7 @@ poly create component --name my_example_component
 It will also be added in the README, when enabled in the configuration. See [configuration](configuration.md).
 
 ## Create a base
-This command will create a base - i.e. a Python package in a namespaced folder.
+This command will create a base - i.e. a Python namespace package.
 
 #### Poetry
 ``` shell
@@ -190,7 +190,7 @@ poly create base --name my_example_base
 It will also be added in the README, when enabled in the configuration. See [configuration](configuration.md).
 
 ## Create a project
-This command will create a project - i.e. a pyproject.toml in a project folder.
+This command will create a project - i.e. a pyproject.toml in a project directory.
 
 #### Poetry
 ``` shell
@@ -580,8 +580,8 @@ With the `poly test` command, You can identify the bricks and projects that are 
 The `poly test` command is used with a sub-command: __poly test diff__.
 It will show you any affected bricks or projects a test is modified.
 
-Tests are expected to live in a test folder at the Workspace root when using the recommended __loose__ theme.
-For users of the __tdd__ theme, the tests are expected to be found in the brick test folder.
+Tests are expected to live in a test directory at the Workspace root when using the recommended __loose__ theme.
+For users of the __tdd__ theme, the tests are expected to be found in the brick test directory.
 
 #### Poetry
 ``` shell
@@ -648,7 +648,7 @@ poly build teardown
 ```
 
 The __setup__ command is for collecting the needed bricks in a project,
-and preparing the Python folder structure before building a distribution.
+and preparing the Python directory structure before building a distribution.
 
 The __teardown__ command is for restoring the repo: removing temporary directories.
 This functionality is already existing when using the Hatchling or PDM build backends together with

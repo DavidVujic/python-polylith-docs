@@ -1,6 +1,6 @@
 # Projects & pyproject.toml
 
-Projects are located in the _projects_ folder of a Polylith workspace. Each project has its own `pyproject.toml`,
+Projects are located in the _projects_ directory of a Polylith workspace. Each project has its own `pyproject.toml`,
 where dependencies and project-specific things are defined. Just as in a mainstream __Poetry__ or __Hatch__ project.
 
 What differs is how the Polylith components and bases (aka bricks) are referenced. 
@@ -19,12 +19,12 @@ packages = [
 ```
 
 Note the _from_ attribute, where the base and components are referenced with relative paths.
-The `bases` and `components` folders are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
+The `bases` and `components` directories are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subdirectory of `projects`.
 
 ## Hatch
 
-### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+### The pyproject.toml in the Workspace (i.e. the one in the root directory)
 Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
 ``` toml
 [tool.hatch.envs.default]
@@ -70,7 +70,7 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 
 ## PDM
 
-### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+### The pyproject.toml in the Workspace (i.e. the one in the root directory)
 Add the `workspace` PDM build hook:
 ``` toml
 [build-system]
@@ -98,7 +98,7 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 
 ## Rye
 
-### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+### The pyproject.toml in the Workspace (i.e. the one in the root directory)
 Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
 
 Add it manually, or by running `rye add polylith-cli --dev`:
@@ -147,12 +147,12 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
 ```
 
-The `bases` and `components` folders are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
+The `bases` and `components` directories are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subdirectory of `projects`.
 
 ## uv
 
-### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+### The pyproject.toml in the Workspace (i.e. the one in the root directory)
 Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
 
 Add it manually, or by running `uv add polylith-cli --dev`:
@@ -201,13 +201,13 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
 ```
 
-The `bases` and `components` folders are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
+The `bases` and `components` directories are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subdirectory of `projects`.
 
 
 ## Maturin
 
-### The pyproject.toml in the Workspace (i.e. the one in the root folder)
+### The pyproject.toml in the Workspace (i.e. the one in the root directory)
 Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
 
 ``` toml
@@ -225,7 +225,7 @@ dev-mode-dirs = ["components", "bases", "development", "."]
 
 
 ### The project-specific pyproject.toml file(s)
-Prepare the project top folder for building wheels and sdists, by include the top namespace.
+Prepare the project top directory for building wheels and sdists, by include the top namespace.
 ``` toml
 [tool.maturin]
 include = ["my_namespace/**/*"]
@@ -240,5 +240,5 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
 ```
 
-The `bases` and `components` folders are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subfolder of the `projects` folder.
+The `bases` and `components` directories are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subdirectory `projects`.

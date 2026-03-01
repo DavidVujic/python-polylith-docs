@@ -16,7 +16,7 @@ From the [Poetry docs](https://python-poetry.org/docs/cli/#init):
 > This command will help you create a pyproject.toml file interactively by prompting you to provide basic information about your package. It will interactively ask you to fill in the fields, while using some smart defaults.
 
 
-Create a workspace, with a basic Polylith folder structure.
+Create a workspace, with a basic Polylith directory structure.
 
 ``` shell
 poetry poly create workspace --name my_namespace --theme loose
@@ -63,7 +63,7 @@ Create a Hatch virtual environment:
 hatch env create
 ```
 
-Create a workspace, with a basic Polylith folder structure.
+Create a workspace, with a basic Polylith directory structure.
 
 ``` shell
 hatch run poly create workspace --name my_namespace --theme loose
@@ -91,7 +91,7 @@ and [PDM init](https://pdm-project.org/2.12/reference/cli/#init)
 Make `PDM` aware of the Polylith structure, by adding the `pdm-polylith-workspace` hook to the newly created `pyproject.toml`.
 
 The build hook will add an additional `pth` file to the virtual environment,
-with paths to the Polylith source code folders (bases, components).
+with paths to the Polylith source code directories (bases, components).
 
 ``` toml
 [build-system]
@@ -112,7 +112,7 @@ pdm install
 
 ```
 
-Next: create a Polylith workspace, with a basic Polylith folder structure.
+Next: create a Polylith workspace, with a basic Polylith directory structure.
 The `poly` command is now available in the local virtual environment.
 You can run commands in the context of `pdm run` to make Polylith aware of the development environment.
 
@@ -137,7 +137,7 @@ rye add polylith-cli --dev
 rye sync  # create a virtual environment and lock files
 ```
 
-Create a workspace, with a basic Polylith folder structure.
+Create a workspace, with a basic Polylith directory structure.
 
 ``` shell
 rye run poly create workspace --name my_namespace --theme loose
@@ -183,7 +183,7 @@ uv sync  # create a virtual environment and lock files
 
 > :material-information: as an alternative to adding a dev dependency, it is also possible to use uvx (example usage: `uvx --from polylith-cli poly info`).
 
-Create a workspace, with a basic Polylith folder structure.
+Create a workspace, with a basic Polylith directory structure.
 
 ``` shell
 uv run poly create workspace --name my_namespace --theme loose
@@ -249,7 +249,7 @@ source .venv/bin/activate
 ```
 
 #### Create the Polylith Workspace
-Create a workspace, with a basic Polylith folder structure.
+Create a workspace, with a basic Polylith directory structure.
 
 ``` shell
 poly create workspace --name my_namespace --theme loose

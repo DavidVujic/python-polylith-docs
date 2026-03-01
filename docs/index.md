@@ -55,11 +55,11 @@ Polylith for Python has support for building libraries to be published at PyPI, 
 More details about how to package libraries in [Packaging & deploying](deployment.md).
 
 ## Structure for simplicity
-Organizing, sorting and structuring things is difficult. Is there one folder structure to rule them all?
+Organizing, sorting and structuring things is difficult. Is there one structure to rule them all?
 
 > There should be one-- and preferably only one --obvious way to do it. [^2]
 
-A good folder structure is one that makes it simple to reuse existing code and makes it easy to add new code.
+A good directory structure is one that makes it simple to reuse existing code and makes it easy to add new code.
 You shouldn't have to worry about these things. The Polylith Architecture offers a way to organize code that is simple,
 framework agnostic and scalable as projects grow.
 
@@ -74,7 +74,7 @@ A brick is not the same thing as a library. So, what's the difference? Well, a l
 > Simple is better than complex. [^2]
 
 
-In Python, a file is a module. One or more modules in a folder becomes a package.
+In Python, a file is a module. One or more modules in a directory becomes a package.
 A good thing with this is that the code will be namespaced when importing it.
 Where does the idea of bricks fit in here? Well, a brick is a Python namespace package. Simple as that.
 

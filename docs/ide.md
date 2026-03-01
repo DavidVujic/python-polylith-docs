@@ -15,7 +15,7 @@ explicit_package_bases = True
 
 ## Pyright
 
-Pyright users can add this setting to make the tool aware of the `components` and `bases` folders.
+Pyright users can add this setting to make the tool aware of the `components` and `bases` directories.
 
 `.vscode/settings.json`
 
@@ -63,8 +63,8 @@ Make sure that you have a local virtual environment configuration (see above).
 
 Run `poetry install` or `hatch env create` in a shell.
 
-This will install the dependencies, and make the environment aware of the `bases` and `components` folders.
-PyCharm will ask about what interpreter to use when opening a Python file. Make sure to choose the local one in the `.venv` folder.
+This will install the dependencies, and make the environment aware of the `bases` and `components` directories.
+PyCharm will ask about what interpreter to use when opening a Python file. Make sure to choose the local one in the `.venv` directory.
 
 Everything should now be set up correctly for PyCharm!
 

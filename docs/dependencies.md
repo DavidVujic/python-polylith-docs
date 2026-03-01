@@ -1,5 +1,5 @@
 # Dependencies
-Projects are located in the _projects_ folder of a Polylith workspace.
+Projects are located in the _projects_ directory of a Polylith workspace.
 Each project has its own `pyproject.toml`,
 where the project-specific dependencies are defined.
 
