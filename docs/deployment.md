@@ -102,7 +102,7 @@ maturin build
 poly build teardown
 ```
 
-This command will create a project specific _dist_ folder containing a _wheel_ with all the needed bricks.
+This command will create a project specific _dist_ directory containing a _wheel_ with all the needed bricks.
 
 ## Deploying
 You can use the built artifacts to install your service in your preffered way, just by running

@@ -16,7 +16,7 @@ workspace/
   README.md
 ```
 
-The building blocks are found in the _bases_ and _components_ folders. That's where the Python code is put.
+The building blocks are found in the _bases_ and _components_ directories. That's where the Python code is put.
 
 ## bases
 > Bases are the building blocks that exposes a public API to the outside world. [^1]
@@ -33,13 +33,13 @@ It can also be a wrapper for a third-party library. A brick is also very likely 
 The combination of bricks becomes a feature. Very much like LEGO.
 
 ## development
-The development folder is where you can put code that you write to experiment or try out features.
+The development directory is where you can put code that you write to experiment or try out features.
 It is similar to the __scratch__ files in JetBrains PyCharm!
 
-The development folder is part of the _development project_, that is defined in the `pyproject.toml` and the `poetry.lock` file of the root folder.
+The development directory is part of the _development project_, that is defined in the `pyproject.toml` and the `poetry.lock` file of the root directory.
 Here, you add __all__ dependencies and bricks. This will make it possible to have the entire code-base available in one and the same virtual environment.
 
-In this folder, it is quite common that developers keep their scratch-style Python modules. It is perfectly fine to version control them.
+In this directory, it is quite common that developers keep their scratch-style Python modules. It is perfectly fine to version control them.
 It is a place for REPL Driven Development and Jupyter Notebooks!
 
 
@@ -53,7 +53,7 @@ development/
 ## projects
 > A project is the result of combining one base (or in rare cases several bases) with multiple components and libraries. [^1]
 
-Each project lives in a subdirectory of the `projects/` folder. A project is the deployable artifact: a microservice, a serverless function, a CLI or any kind of application.
+Each project lives in a subdirectory of the `projects/` directory. A project is the deployable artifact: a microservice, a serverless function, a CLI or any kind of application.
 
 ``` shell
 projects/

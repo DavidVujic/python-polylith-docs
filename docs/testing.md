@@ -5,11 +5,11 @@ That means you can use your favorite tools as you would with any mainstream Pyth
 ## Testing Bricks
 By default, tests are added when creating a new component or base with the `poly create` [command](commands.md).
 This [is optional and can be turned off](configuration.md) in the Workspace configuration.
-The tests are added in a `test` folder at the root of the workspace with the same kind of folder structure as the bricks.
+The tests are added in a `test` directory at the root of the workspace with the same kind of structure as the bricks.
 
 ### Example
 Creating a new `parser` component using `poly create component`. This will add a new brick.
-A corresponding unit test will also be created in the `test` folder:
+A corresponding unit test will also be created in the `test` directory:
 ``` python
 from my_top_namespace.parser import core
 
