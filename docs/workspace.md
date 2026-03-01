@@ -25,7 +25,7 @@ A base is a special kind of Polylith _brick_. It is where you would add the entr
 It is a bridge between the outside world and the actual features.
 
 ## components
-> A component is an encapsulated block of code that can be assembled together with a base (it's often just a single base) and a set of components and libraries into services, libraries or tools. Components achieve encapsulation and composability by separating their private implementation from their public interface. [^1]
+> A component is an encapsulated block of code that can be assembled together with a base (it's often just a single base) and a set of components and libraries into services, libraries or tools. Components achieve encapsulation and composability by separating their private implementation from their public interface. [^2]
 
 A component is also a _brick_, a building block for a feature. 
 It can be a "tech" brick, such as containing dictionary filtering helper functions, or a parser.
@@ -51,7 +51,7 @@ development/
 ```
 
 ## projects
-> A project is the result of combining one base (or in rare cases several bases) with multiple components and libraries. [^1]
+> A project is the result of combining one base (or in rare cases several bases) with multiple components and libraries. [^3]
 
 Each project lives in a subdirectory of the `projects/` directory. A project is the deployable artifact: a microservice, a serverless function, a CLI or any kind of application.
 
@@ -64,4 +64,6 @@ projects/
 In the project-specific directory, you will find a project-specific `pyproject.toml` that defines dependencies, packages and everything needed for the actual project.
 It is not recommended to put Python code in here. Just add the necessary project infrastructure, such as Dockerfiles and project-specific deploy scripting.
 
-[^1]: From the official [Polylith Architecture documentation](https://polylith.gitbook.io/polylith/architecture/2.2.-base)
+[^1]: From the official Polylith Architecture [documentation about bases](https://polylith.gitbook.io/polylith/architecture/2.2.-base)
+[^2]: From the official Polylith Architecture [documentation about components](https://polylith.gitbook.io/polylith/architecture/2.3.-component)
+[^3]: From the official Polylith Architecture [documentation about projects](https://polylith.gitbook.io/polylith/architecture/2.6.-project)
