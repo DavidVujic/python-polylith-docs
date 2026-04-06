@@ -72,3 +72,25 @@ Or, configure output location by command:
 [tool.polylith.commands.deps]
 output = "somewhere/else"
 ```
+
+### Project name alias
+This is useful for Monorepos with many and/or very long project names. Using an alias for a project name can improve the visualization when running the poly commands (such as `poly info`). If there is an alias configured, it will be used in the tables instead of the project name.
+
+Configure it in the root-level __workspace.toml__ (or if you prefer the root-level _pyproject.toml_):
+
+``` toml
+[tool.polylith.projects.alias]
+my-api-project-name-with-a-long-name = "api"
+my-kafka-handler-project-servie = "kafka-handler"
+```
+
+### Project groups
+This is useful for teams using Domain Driven Design practices, such as _bounded contexts_, or have project types to separate individual projects in a Monorepo. In the Polylith context, the grouping of projects can now be used to filter out the `poly info` view by group(s).
+
+This command will display the Workspace information, but will filter out the brick-project matrix in `poly info`  to only show the projects in the selected group(s). You can add one or several groups to the command option.
+
+``` toml
+[tool.polylith.projects.groups]
+purchase = ["project-a", "project-c"]
+order = ["the-order-project", "project-x"]
+```

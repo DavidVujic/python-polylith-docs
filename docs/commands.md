@@ -282,6 +282,9 @@ poly info
 
 `--save` Store the contents of this command to file.
 
+`--group` Show contents based on configured project group.
+This is configured in the Workspace [configuration](configuration.md#project-groups).
+
 ## Diff
 Shows what has changed since the most recent stable point in time.
 
