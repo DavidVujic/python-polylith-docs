@@ -81,7 +81,7 @@ Configure it in the root-level __workspace.toml__ (or if you prefer the root-lev
 ``` toml
 [tool.polylith.projects.alias]
 my-api-project-name-with-a-long-name = "api"
-my-kafka-handler-project-servie = "kafka-handler"
+my-kafka-handler-project-service = "kafka-handler"
 ```
 
 ### Project groups
