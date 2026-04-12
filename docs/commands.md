@@ -572,6 +572,10 @@ A detailed view for a single brick and the dependent bricks: used by, and uses.
 
 `--save` Store the contents of this command to file.
 
+`--interface` find code that bypasses the explicit interfaces of bricks (no output means all good).
+
+NOTE: When `--interface` is combined with the `--brick` option, it will display the interface of the chosen brick.
+
 ## Test
 Polylith doesn't have its own test runner. Use your favorite testing tool, such as `pytest`.
 
