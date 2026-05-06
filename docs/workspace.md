@@ -36,7 +36,7 @@ The combination of bricks becomes a feature. Very much like LEGO.
 The development directory is where you can put code that you write to experiment or try out features.
 It is similar to the __scratch__ files in JetBrains PyCharm!
 
-The development directory is part of the _development project_, that is defined in the `pyproject.toml` and the `poetry.lock` file of the root directory.
+The development directory is part of the _development project_, that is defined in the `pyproject.toml` and the `lock` file of the root directory.
 Here, you add __all__ dependencies and bricks. This will make it possible to have the entire code-base available in one and the same virtual environment.
 
 In this directory, it is quite common that developers keep their scratch-style Python modules. It is perfectly fine to version control them.
