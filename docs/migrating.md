@@ -1,5 +1,7 @@
 # Migrating to Polylith
 
+> :material-information: The Polylith CLI contains a set of Agent skills, including skills for migrating a single-repo project into Polylith. See [Agent skills](agents.md) section for how to add them to your Monorepo.
+
 If you decide to give Polylith a try with existing code, the suggestion is to:
 
 - create a new repo and workspace. See [setup](setup.md) and [commands](commands.md).
