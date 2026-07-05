@@ -23,6 +23,11 @@ Add the proper assertions to your tests during development of the bricks.
 ## Running tests
 Running Pytest from the workspace root:
 
+#### uv
+``` shell
+uv run pytest
+```
+
 #### Poetry
 ``` shell
 poetry run pytest
@@ -36,16 +41,6 @@ hatch run pytest
 #### PDM
 ``` shell
 pdm run pytest
-```
-
-#### Rye
-``` shell
-rye run pytest
-```
-
-#### uv
-``` shell
-uv run pytest
 ```
 
 #### Maturin
@@ -118,6 +113,11 @@ Append the `--short` option for a scripting-friendly output.
 You can use the output from the `poly diff` command to run specific tests.
 Storing a list of bricks in a bash variable:
 
+#### uv
+``` shell
+changes="$(uv run poly diff --bricks --short)"
+```
+
 #### Poetry
 ``` shell
 changes="$(poetry poly diff --bricks --short)"
@@ -131,16 +131,6 @@ changes="$(hatch run poly diff --bricks --short)"
 #### PDM
 ``` shell
 changes="$(pdm run poly diff --bricks --short)"
-```
-
-#### Rye
-``` shell
-changes="$(rye run poly diff --bricks --short)"
-```
-
-#### uv
-``` shell
-changes="$(uv run poly diff --bricks --short)"
 ```
 
 #### Maturin
@@ -166,6 +156,13 @@ Transform the result of the `poly diff` command into a Pytest _keyword_ or _mark
 - `-k` is for running tests by keyword expressions.
 - `-m` is for running tests by marker expressions.
 
+#### uv
+``` shell
+query="${changes//,/ or }"
+
+uv run pytest -k <<< echo "$query"
+```
+
 #### Poetry
 ``` shell
 query="${changes//,/ or }"
@@ -185,20 +182,6 @@ hatch run pytest -k <<< echo "$query"
 query="${changes//,/ or }"
 
 pdm run pytest -k <<< echo "$query"
-```
-
-#### Rye
-``` shell
-query="${changes//,/ or }"
-
-rye run pytest -k <<< echo "$query"
-```
-
-#### uv
-``` shell
-query="${changes//,/ or }"
-
-uv run pytest -k <<< echo "$query"
 ```
 
 #### Maturin

@@ -5,6 +5,11 @@
 ## Create a workspace
 This will create a Polylith workspace, with a basic Polylith directory structure.
 
+#### uv
+``` shell
+uv run poly create workspace --name my_example_namespace --theme loose
+```
+
 #### Poetry
 ``` shell
 poetry poly create workspace --name my_example_namespace --theme loose
@@ -18,16 +23,6 @@ hatch run poly create workspace --name my_example_namespace --theme loose
 #### PDM
 ``` shell
 pdm run poly create workspace --name my_example_namespace --theme loose
-```
-
-#### Rye
-``` shell
-rye run poly create workspace --name my_example_namespace --theme loose
-```
-
-#### uv
-``` shell
-uv run poly create workspace --name my_example_namespace --theme loose
 ```
 
 #### Pixi
@@ -98,6 +93,11 @@ These are added for any initial commits of the directory structure, and can safe
 ## Create a component
 This command will create a component - i.e. a Python namespace package.
 
+#### uv
+``` shell
+uv run poly create component --name my_example_component
+```
+
 #### Poetry
 ``` shell
 poetry poly create component --name my_example_component
@@ -111,16 +111,6 @@ hatch run poly create component --name my_example_component
 #### PDM
 ``` shell
 pdm run poly create component --name my_example_component
-```
-
-#### Rye
-``` shell
-rye run poly create component --name my_example_component
-```
-
-#### uv
-``` shell
-uv run poly create component --name my_example_component
 ```
 
 #### Pixi
@@ -145,6 +135,11 @@ It will also be added in the README, when enabled in the configuration. See [con
 ## Create a base
 This command will create a base - i.e. a Python namespace package.
 
+#### uv
+``` shell
+uv run poly create base --name my_example_base
+```
+
 #### Poetry
 ``` shell
 poetry poly create base --name my_example_base
@@ -158,16 +153,6 @@ hatch run poly create base --name my_example_base
 #### PDM
 ``` shell
 pdm run poly create base --name my_example_base
-```
-
-#### Rye
-``` shell
-rye run poly create base --name my_example_base
-```
-
-#### uv
-``` shell
-uv run poly create base --name my_example_base
 ```
 
 #### Pixi
@@ -192,6 +177,11 @@ It will also be added in the README, when enabled in the configuration. See [con
 ## Create a project
 This command will create a project - i.e. a pyproject.toml in a project directory.
 
+#### uv
+``` shell
+uv run poly create project --name my_example_project
+```
+
 #### Poetry
 ``` shell
 poetry poly create project --name my_example_project
@@ -205,16 +195,6 @@ hatch run poly create project --name my_example_project
 #### PDM
 ``` shell
 pdm run poly create project --name my_example_project
-```
-
-#### Rye
-``` shell
-rye run poly create project --name my_example_project
-```
-
-#### uv
-``` shell
-uv run poly create project --name my_example_project
 ```
 
 #### Pixi
@@ -239,6 +219,11 @@ poly create project --name my_example_project
 ## Info
 Show info about the workspace:
 
+#### uv
+``` shell
+uv run poly info
+```
+
 #### Poetry
 ``` shell
 poetry poly info
@@ -252,16 +237,6 @@ hatch run poly info
 #### PDM
 ``` shell
 pdm run poly info
-```
-
-#### Rye
-``` shell
-rye run poly info
-```
-
-#### uv
-``` shell
-uv run poly info
 ```
 
 #### Pixi
@@ -295,6 +270,11 @@ The pattern can be configured in the Workspace [configuration](configuration.md)
 The `diff` command is useful in a CI environment, to determine if a project should be deployed or not.
 It is also useful when running tests for changed bricks only.
 
+#### uv
+``` shell
+uv run poly diff
+```
+
 #### Poetry
 ``` shell
 poetry poly diff
@@ -308,16 +288,6 @@ hatch run poly diff
 #### PDM
 ``` shell
 pdm run poly diff
-```
-
-#### Rye
-``` shell
-rye run poly diff
-```
-
-#### uv
-``` shell
-uv run poly diff
 ```
 
 #### Pixi
@@ -347,6 +317,11 @@ This option also support using a specific commit hash.
 ## Libs
 Show info about the third-party libraries used in the workspace:
 
+#### uv
+``` shell
+uv run poly libs
+```
+
 #### Poetry
 ``` shell
 poetry poly libs
@@ -366,16 +341,6 @@ hatch run poly libs
 #### PDM
 ``` shell
 pdm run poly libs
-```
-
-#### Rye
-``` shell
-rye run poly libs
-```
-
-#### uv
-``` shell
-uv run poly libs
 ```
 
 #### Pixi
@@ -412,6 +377,11 @@ Using `--alias opencv-python=cv2` will make the command treat the alias as a thi
 ## Check
 Validates the Polylith workspace, checking for any missing dependencies (bricks and third-party libraries):
 
+#### uv
+``` shell
+uv run poly check
+```
+
 #### Poetry
 ``` shell
 poetry poly check
@@ -428,16 +398,6 @@ hatch run poly check
 #### PDM
 ``` shell
 pdm run poly check
-```
-
-#### Rye
-``` shell
-rye run poly check
-```
-
-#### uv
-``` shell
-uv run poly check
 ```
 
 #### Pixi
@@ -474,6 +434,11 @@ Using `--alias opencv-python=cv2` will make the command treat the alias as a thi
 ## Sync
 Keep projects in sync with the actual usage of bricks in source code.
 
+#### uv
+``` shell
+uv run poly sync
+```
+
 #### Poetry
 ``` shell
 poetry poly sync
@@ -487,16 +452,6 @@ hatch run poly sync
 #### PDM
 ``` shell
 pdm run poly sync
-```
-
-#### Rye
-``` shell
-rye run poly sync
-```
-
-#### uv
-``` shell
-uv run poly sync
 ```
 
 #### Pixi
@@ -525,6 +480,11 @@ Synchronize a specific project.
 ## Deps
 Show dependencies between bricks.
 
+#### uv
+``` shell
+uv run poly deps
+```
+
 #### Poetry
 ``` shell
 poetry poly deps
@@ -538,16 +498,6 @@ hatch run poly deps
 #### PDM
 ``` shell
 pdm run poly deps
-```
-
-#### Rye
-``` shell
-rye run poly deps
-```
-
-#### uv
-``` shell
-uv run poly deps
 ```
 
 #### Pixi
@@ -590,6 +540,11 @@ It will show you any affected bricks or projects a test is modified.
 Tests are expected to live in a test directory at the Workspace root when using the recommended __loose__ theme.
 For users of the __tdd__ theme, the tests are expected to be found in the brick test directory.
 
+#### uv
+``` shell
+uv run poly test diff
+```
+
 #### Poetry
 ``` shell
 poetry poly test diff
@@ -603,16 +558,6 @@ hatch run poly test diff
 #### PDM
 ``` shell
 pdm run poly test diff
-```
-
-#### Rye
-``` shell
-rye run poly test diff
-```
-
-#### uv
-``` shell
-uv run poly test diff
 ```
 
 #### Pixi

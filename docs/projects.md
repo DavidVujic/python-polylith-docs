@@ -1,9 +1,64 @@
 # Projects & pyproject.toml
 
 Projects are located in the _projects_ directory of a Polylith workspace. Each project has its own `pyproject.toml`,
-where dependencies and project-specific things are defined. Just as in a mainstream __Poetry__ or __Hatch__ project.
+where dependencies and project-specific things are defined. Just as in a mainstream __uv__,  __Poetry__ or __Hatch__ project.
 
 What differs is how the Polylith components and bases (aka bricks) are referenced. 
+
+## uv
+
+### The pyproject.toml in the Workspace (i.e. the one in the root directory)
+Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
+
+Add it manually, or by running `uv add polylith-cli --dev`:
+
+``` toml
+[tool.uv]
+dev-dependencies = ["polylith-cli"]
+```
+
+The default build backend for uv is Hatch.
+
+``` toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
+Make uv (and Hatch) aware of the way Polylith organizes source code:
+``` toml
+[tool.hatch.build]
+dev-mode-dirs = ["components", "bases", "development", "."]
+```
+
+
+### The project-specific pyproject.toml file(s)
+Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
+``` toml
+[build-system]
+requires = ["hatchling", "hatch-polylith-bricks"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.polylith-bricks]
+# this section is needed to enable the hook in the build process, even if empty.
+
+# This section is needed for building
+[tool.hatch.build.targets.wheel]
+packages = ["<the polylith top namespace here>"]
+```
+
+Polylith bricks are added in the `[tool.polylith.bricks]` section:
+
+``` toml
+[tool.polylith.bricks]
+"../../bases/my_namespace/my_base" = "my_namespace/my_base"
+"../../components/my_namespace/my_component" = "my_namespace/my_component"
+"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
+```
+
+The `bases` and `components` directories are located at the workspace root.
+The project-specific `pyproject.toml` file is located in a subdirectory of `projects`.
+
 
 ## Poetry
 Bricks are added in the _tool.poetry_ section as _packages_:
@@ -95,115 +150,6 @@ Polylith bricks are added in the `[tool.polylith.bricks]` section:
 "../../components/my_namespace/my_component" = "my_namespace/my_component"
 "../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
 ```
-
-## Rye
-
-### The pyproject.toml in the Workspace (i.e. the one in the root directory)
-Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
-
-Add it manually, or by running `rye add polylith-cli --dev`:
-
-``` toml
-[tool.rye]
-dev-dependencies = ["polylith-cli"]
-```
-
-The default build backend for Rye is Hatch.
-
-``` toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-```
-
-Make Rye (and Hatch) aware of the way Polylith organizes source code:
-``` toml
-[tool.hatch.build]
-dev-mode-dirs = ["components", "bases", "development", "."]
-```
-
-
-### The project-specific pyproject.toml file(s)
-Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
-``` toml
-[build-system]
-requires = ["hatchling", "hatch-polylith-bricks"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.hooks.polylith-bricks]
-# this section is needed to enable the hook in the build process, even if empty.
-
-# This section is needed for building
-[tool.hatch.build.targets.wheel]
-packages = ["<the polylith top namespace here>"]
-```
-
-Polylith bricks are added in the `[tool.polylith.bricks]` section:
-
-``` toml
-[tool.polylith.bricks]
-"../../bases/my_namespace/my_base" = "my_namespace/my_base"
-"../../components/my_namespace/my_component" = "my_namespace/my_component"
-"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
-```
-
-The `bases` and `components` directories are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subdirectory of `projects`.
-
-## uv
-
-### The pyproject.toml in the Workspace (i.e. the one in the root directory)
-Add the `polylith-cli` to the workspace `pyproject.toml` configuration.
-
-Add it manually, or by running `uv add polylith-cli --dev`:
-
-``` toml
-[tool.uv]
-dev-dependencies = ["polylith-cli"]
-```
-
-The default build backend for uv is Hatch.
-
-``` toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-```
-
-Make uv (and Hatch) aware of the way Polylith organizes source code:
-``` toml
-[tool.hatch.build]
-dev-mode-dirs = ["components", "bases", "development", "."]
-```
-
-
-### The project-specific pyproject.toml file(s)
-Add the `hatch-polylith-bricks` build hook plugin to the `pyproject.toml` file.
-``` toml
-[build-system]
-requires = ["hatchling", "hatch-polylith-bricks"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.hooks.polylith-bricks]
-# this section is needed to enable the hook in the build process, even if empty.
-
-# This section is needed for building
-[tool.hatch.build.targets.wheel]
-packages = ["<the polylith top namespace here>"]
-```
-
-Polylith bricks are added in the `[tool.polylith.bricks]` section:
-
-``` toml
-[tool.polylith.bricks]
-"../../bases/my_namespace/my_base" = "my_namespace/my_base"
-"../../components/my_namespace/my_component" = "my_namespace/my_component"
-"../../components/my_namespace/my_other_component" = "my_namespace/my_other_component"
-```
-
-The `bases` and `components` directories are located at the workspace root.
-The project-specific `pyproject.toml` file is located in a subdirectory of `projects`.
-
 
 ## Maturin
 

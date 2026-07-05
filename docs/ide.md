@@ -61,7 +61,7 @@ path = ".venv"
 ## PyCharm
 Make sure that you have a local virtual environment configuration (see above).
 
-Run `poetry install` or `hatch env create` in a shell.
+Run `uv sync`, `poetry install` or `hatch env create` in a shell.
 
 This will install the dependencies, and make the environment aware of the `bases` and `components` directories.
 PyCharm will ask about what interpreter to use when opening a Python file. Make sure to choose the local one in the `.venv` directory.

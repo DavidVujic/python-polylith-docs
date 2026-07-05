@@ -16,7 +16,7 @@ you will need to add the path in the project-specific `pyroject.toml`.
 
 If you only provide `wheel` distributions, this is optional.
 
-#### Hatch, Rye, Pixi and uv
+#### uv, Hatch and Pixi
 ```toml
 [tool.hatch.build.targets.wheel]
 packages = ["<your top namespace here>"]
@@ -42,6 +42,11 @@ This is the preferred way for Polylith projects.
 
 ### Packaging a service or app
 
+#### uv
+``` shell
+uv build --wheel projects/the_project
+```
+
 #### Poetry
 ``` shell
 poetry build-project --directory projects/the_project
@@ -59,18 +64,6 @@ hatch build
 cd projects/the_project
 
 pdm build
-```
-
-#### Rye
-``` shell
-cd projects/the_project
-
-rye build --wheel
-```
-
-#### uv
-``` shell
-uv build --wheel projects/the_project
 ```
 
 _Are you using the `uv` build backend (and not the recommended `hatch` build backend)?_
@@ -129,7 +122,7 @@ The `build-project` command, with a custom top namespace:
 poetry build-project --with-top-namespace my_custom_namespace
 ```
 
-#### uv, Hatch, PDM, Rye and Maturin
+#### uv, Hatch, PDM and Maturin
 A custom top namespace is defined in the project-specific `pyproject.toml`:
 
 ``` toml
