@@ -27,6 +27,11 @@ Use the `poly libs` and/or `poly check` [command](commands.md) to verify all tha
 Both commands support the `--directory` option (coming from Poetry).
 This means that you can run the commands from the workspace root, but for a specific project:
 
+### uv
+``` shell
+uv run poly check --directory projects/my-project
+```
+
 ### Poetry
 ``` shell
 poetry poly check --directory projects/my-project
@@ -40,16 +45,6 @@ hatch run poly check --directory projects/my-project
 ### PDM
 ``` shell
 pdm run poly check --directory projects/my-project
-```
-
-### Rye
-``` shell
-rye run poly check --directory projects/my-project
-```
-
-### uv
-``` shell
-uv run poly check --directory projects/my-project
 ```
 
 ### Maturin

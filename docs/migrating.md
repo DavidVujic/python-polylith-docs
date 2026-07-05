@@ -22,7 +22,7 @@ packages = [
 # insert the needed 3rd party libraries here
 ```
 
-## uv, Hatch, PDM, Rye and Maturin
+## uv, Hatch, PDM and Maturin
 ``` toml
 [project]
 dependencies = [] # insert the needed 3rd party libraries here
@@ -48,6 +48,13 @@ Continue with your next existing service or app! By now, you should already be a
 ## Migrating away from Polylith?
 This step is simple.
 
+### uv
+``` shell
+cd path/to_project
+
+uv build
+```
+
 ### Poetry
 ``` shell
 poetry build-project --directory path/to/project
@@ -65,20 +72,6 @@ hatch build
 cd path/to/project
 
 pdm build
-```
-
-### Rye
-``` shell
-cd path/to_project
-
-rye build --sdist
-```
-
-### uv
-``` shell
-cd path/to_project
-
-uv build
 ```
 
 ### Maturin

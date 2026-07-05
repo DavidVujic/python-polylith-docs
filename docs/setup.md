@@ -1,11 +1,71 @@
 # Setup
 
 ##  Create a Polylith Workspace
-Create a directory for your code, initialize it with __git__ and create a basic __Poetry__, __Hatch__ or __PDM__ setup:
+Create a directory for your code, initialize it with __git__ and create a basic __uv__,  __Poetry__, __Hatch__,  __PDM__, __Maturin__ or __pixi__ setup:
 
 ``` shell
 git init
 ```
+
+### uv
+``` shell
+uv init my_repo  # name your repo
+
+cd my_repo
+
+uv add polylith-cli --dev
+
+uv sync  # create a virtual environment and lock files
+```
+
+Create a workspace, with a basic Polylith directory structure.
+
+``` shell
+uv run poly create workspace --name my_namespace --theme loose
+```
+
+`--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
+__Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
+
+`--theme` the structure of the workspace, `loose` is the recommended structure for Python.
+
+#### Edit the project configuration
+The recommended build backend for `uv` is Hatch. This is because of the very useful build hook support.
+Make sure to add this section, if not already added, in the `pyproject.toml`:
+
+``` toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+```
+
+Make `uv` aware of the way Polylith organizes source code:
+``` toml
+[tool.hatch.build]
+dev-mode-dirs = ["components", "bases", "development", "."]
+```
+
+Run the `sync` command to update the virtual environment:
+
+``` shell
+uv sync
+```
+
+##### What about the uv Build Backend?
+You can use the `uv` build backend with Polylith, even if the `hatch` backend is the recommended one.
+
+Add this configuration, to make `uv` aware of namespace packages and the top namespace.
+
+``` toml
+[tool.uv.build-backend]
+namespace = true
+module-name = "<the polylith top namespace here>"
+module-root = ""
+```
+
+Also, have a look at the `poly env` command to make sure the "dev mode dirs", or _module roots_, are in sync with
+the current virtual environment.
+
 
 ### Poetry
 ``` shell
@@ -124,112 +184,6 @@ pdm run poly create workspace --name my_namespace --theme loose
 __Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
 
 `--theme` the structure of the workspace, `loose` is the recommended structure for Python.
-
-
-### Rye
-``` shell
-rye init my_repo  # name your repo
-
-cd my_repo
-
-rye add polylith-cli --dev
-
-rye sync  # create a virtual environment and lock files
-```
-
-Create a workspace, with a basic Polylith directory structure.
-
-``` shell
-rye run poly create workspace --name my_namespace --theme loose
-```
-
-`--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
-__Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
-
-`--theme` the structure of the workspace, `loose` is the recommended structure for Python.
-
-
-#### Edit the configuration
-The default build backend for Rye is Hatch.
-Make Rye (and Hatch) aware of the way Polylith organizes source code:
-``` toml
-[tool.hatch.build]
-dev-mode-dirs = ["components", "bases", "development", "."]
-```
-
-Remove the `[tool.hatch.build.targets.wheel]` section.
-
-Run the `sync` command to update the virtual environment:
-
-``` shell
-rye sync
-```
-
-Finally, remove the `src` boilerplate code that was added by Rye in the first step:
-``` shell
-rm -r src
-```
-
-### uv
-``` shell
-uv init my_repo  # name your repo
-
-cd my_repo
-
-uv add polylith-cli --dev
-
-uv sync  # create a virtual environment and lock files
-```
-
-> :material-information: as an alternative to adding a dev dependency, it is also possible to use uvx (example usage: `uvx --from polylith-cli poly info`).
-
-Create a workspace, with a basic Polylith directory structure.
-
-``` shell
-uv run poly create workspace --name my_namespace --theme loose
-```
-
-`--name` (required) the workspace name, that will be used as the single top namespace for all bricks.
-__Choose the name wisely.__ Have a look in [PEP-423](https://peps.python.org/pep-0423/#respect-ownership) for naming guidelines.
-
-`--theme` the structure of the workspace, `loose` is the recommended structure for Python.
-
-#### Edit the project configuration
-The recommended build backend for `uv` is Hatch. This is because of the very useful build hook support.
-Make sure to add this section, if not already added, in the `pyproject.toml`:
-
-``` toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-```
-
-Make `uv` aware of the way Polylith organizes source code:
-``` toml
-[tool.hatch.build]
-dev-mode-dirs = ["components", "bases", "development", "."]
-```
-
-Run the `sync` command to update the virtual environment:
-
-``` shell
-uv sync
-```
-
-##### What about the uv Build Backend?
-You can use the `uv` build backend with Polylith, even if the `hatch` backend is the recommended one.
-
-Add this configuration, to make `uv` aware of namespace packages and the top namespace.
-
-``` toml
-[tool.uv.build-backend]
-namespace = true
-module-name = "<the polylith top namespace here>"
-module-root = ""
-```
-
-Also, have a look at the `poly env` command to make sure the "dev mode dirs", or _module roots_, are in sync with
-the current virtual environment.
 
 ### Maturin
 Add the `polylith-cli` as a development dependency to your `pyproject.toml` file:
