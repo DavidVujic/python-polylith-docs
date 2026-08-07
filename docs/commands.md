@@ -584,6 +584,7 @@ poly test diff
 The tag patterns are defined in the Workspace [configuration](configuration.md).
 This option also support using a specific commit hash.
 
+`--strategy` Find related or affected bricks from changes in tests. By __imports__ (the bricks used in tests) or by __path__ (the corresponding bricks). The default is by __imports__.
 
 ## Build
 This is a command for Package & Dependency management tools without support for hooks or plugins,
